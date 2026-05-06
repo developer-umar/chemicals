@@ -4,6 +4,7 @@ import GlobalNetwork from "./components/GlobalNetwork";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import ProductCategories from "./components/ProductCategories";
+import TeamSection from "./components/TeamSection";
 import WhyChooseUs from "./components/WhyChooseUs";
 
 
@@ -17,6 +18,7 @@ export default function HomePage() {
       <ProductCategories/>
       <WhyChooseUs/>
       <GlobalNetwork/>
+      <TeamSection/>
       
     </main>
   );
