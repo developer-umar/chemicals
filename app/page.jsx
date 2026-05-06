@@ -1,4 +1,5 @@
 import AboutSection from "./components/AboutSection";
+import CoreBusiness from "./components/CoreBusiness";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 
@@ -9,6 +10,7 @@ export default function HomePage() {
       <Navbar/>
       <Hero/>
       <AboutSection/>
+      <CoreBusiness/>
     </main>
   );
 }
