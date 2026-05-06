@@ -9,6 +9,7 @@ import ProductCategories from "./components/ProductCategories";
 import TeamSection from "./components/TeamSection";
 import WhyChooseUs from "./components/WhyChooseUs";
 import ClientShowcase from "./components/ClientShowcase";
+import ParallaxCTA from "./components/ParallaxCTA";
 
 
 export default function HomePage() {
@@ -25,6 +26,7 @@ export default function HomePage() {
       <IndustriesSection/>
       <GallerySection/>
       <ClientShowcase/>
+      <ParallaxCTA/>
       
     </main>
   );
