@@ -10,6 +10,7 @@ import TeamSection from "./components/TeamSection";
 import WhyChooseUs from "./components/WhyChooseUs";
 import ClientShowcase from "./components/ClientShowcase";
 import ParallaxCTA from "./components/ParallaxCTA";
+import Footer from "./components/Footer";
 
 
 export default function HomePage() {
@@ -27,6 +28,7 @@ export default function HomePage() {
       <GallerySection/>
       <ClientShowcase/>
       <ParallaxCTA/>
+      <Footer/>
       
     </main>
   );
