@@ -1,5 +1,5 @@
 import AboutSection from "./components/AboutSection";
-import GallerySection from "./components/components/GallerySection";
+import GallerySection from "./components/GallerySection";
 import CoreBusiness from "./components/CoreBusiness";
 import GlobalNetwork from "./components/GlobalNetwork";
 import Hero from "./components/Hero";
@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import ProductCategories from "./components/ProductCategories";
 import TeamSection from "./components/TeamSection";
 import WhyChooseUs from "./components/WhyChooseUs";
+import ClientShowcase from "./components/ClientShowcase";
 
 
 export default function HomePage() {
@@ -23,6 +24,7 @@ export default function HomePage() {
       <TeamSection/>
       <IndustriesSection/>
       <GallerySection/>
+      <ClientShowcase/>
       
     </main>
   );
