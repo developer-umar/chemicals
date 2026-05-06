@@ -1,4 +1,5 @@
 import AboutSection from "./components/AboutSection";
+import GallerySection from "./components/components/GallerySection";
 import CoreBusiness from "./components/CoreBusiness";
 import GlobalNetwork from "./components/GlobalNetwork";
 import Hero from "./components/Hero";
@@ -21,6 +22,7 @@ export default function HomePage() {
       <GlobalNetwork/>
       <TeamSection/>
       <IndustriesSection/>
+      <GallerySection/>
       
     </main>
   );
