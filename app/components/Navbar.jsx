@@ -53,12 +53,12 @@ export default function Navbar() {
             <Image
               src="/logo.png"
               alt="FH Chemicals"
-              width={55}
-              height={55}
+              width={150}
+              height={150}
               className="object-contain"
             />
 
-            <div>
+            {/* <div>
               <h2 className="text-2xl font-bold text-slate-900">
                 FH Chemicals
               </h2>
@@ -66,7 +66,7 @@ export default function Navbar() {
               <p className="text-sm text-slate-500">
                 Global Importers & Traders
               </p>
-            </div>
+            </div> */}
           </div>
 
           {/* DESKTOP MENU */}
