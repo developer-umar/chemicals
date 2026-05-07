@@ -2,7 +2,6 @@ import AboutSection from "./components/AboutSection";
 import GallerySection from "./components/GallerySection";
 import CoreBusiness from "./components/CoreBusiness";
 import GlobalNetwork from "./components/GlobalNetwork";
-import Hero from "./components/Hero";
 import IndustriesSection from "./components/IndustriesSection";
 import Navbar from "./components/Navbar";
 import ProductCategories from "./components/ProductCategories";
@@ -11,13 +10,15 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import ClientShowcase from "./components/ClientShowcase";
 import ParallaxCTA from "./components/ParallaxCTA";
 import Footer from "./components/Footer";
+import HeroSection from "./components/Hero";
 
 
 export default function HomePage() {
   return (
     <main>
       <Navbar/>
-      <Hero/>
+      <HeroSection/>
+      
       <AboutSection/>
       <CoreBusiness/>
       <ProductCategories/>
