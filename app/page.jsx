@@ -11,6 +11,22 @@ import ClientShowcase from "./components/ClientShowcase";
 import ParallaxCTA from "./components/ParallaxCTA";
 import Footer from "./components/Footer";
 import HeroSection from "./components/Hero";
+export const metadata = {
+  title:
+    "FH Chemicals | PU Chemicals & Leather Tanning Chemicals Manufacturer",
+
+  description:
+    "Leading manufacturer of PU chemicals, leather tanning chemicals, finishing chemicals and footwear chemical solutions.",
+
+  keywords: [
+    "PU chemicals",
+    "Leather tanning chemicals",
+    "Footwear chemicals",
+    "Leather finishing chemicals",
+    "Safety shoe chemicals",
+  ],
+};
+
 
 
 export default function HomePage() {
