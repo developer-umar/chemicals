@@ -31,6 +31,10 @@ const slides = [
   },
 ];
 
+
+
+// Slides array same rahega...
+
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
 
@@ -42,14 +46,14 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative h-[90vh] w-full overflow-hidden bg-[#0a0a0a] font-sans">
+    <section className="relative h-screen w-full overflow-hidden bg-[#050505]">
       <AnimatePresence mode="wait">
         <motion.div
           key={slides[current].id}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
+          transition={{ duration: 1.2 }}
           className="absolute inset-0"
         >
           <Image
@@ -57,66 +61,36 @@ export default function HeroSection() {
             alt="Hero Background"
             fill
             priority
-            className="object-cover transition-transform duration-[6000ms] scale-110"
-            style={{ transform: "scale(1.05)" }}
+            // FIXED: scale-110 hata diya, sirf subtle 1.02 rakha hai for motion
+            className="object-cover object-center transition-transform duration-[8000ms]"
+            style={{ transform: "scale(1.02)" }} 
           />
-          {/* Professional Overlay: Lighter, more sophisticated gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0a0a0a]" />
-          <div className="absolute inset-0 bg-black/20 backdrop-brightness-75" />
+          {/* PREMIUM OVERLAY: Deep Forest to Black Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-black via-black/40 to-transparent opacity-80" />
+          <div className="absolute inset-0 bg-[#064e3b]/10 backdrop-brightness-[0.8]" />
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-20 flex h-full items-center justify-center px-6 text-center">
-        <div className="max-w-5xl">
+      <div className="relative z-20 flex h-full items-center px-6 md:px-20">
+        <div className="max-w-4xl text-left"> {/* Center ki jagah Left align for better professional look */}
           <motion.div
             key={`content-${current}`}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            {/* Minimal Tagline */}
-            <span className="mb-4 block text-[10px] uppercase tracking-[0.6em] text-white/50">
-              Future of Materials
+            <span className="mb-4 block text-[10px] uppercase tracking-[0.5em] text-emerald-400/80 font-semibold">
+              Global Leather & Chemical Excellence
             </span>
-
-            {/* Typography: Using 'tracking-tighter' for that premium editorial look */}
-            <h1 className="text-6xl font-extralight tracking-tighter text-white md:text-8xl lg:text-9xl">
-              {slides[current].title.split(" ").map((word, i) => (
-                <span key={i} className={i === 1 ? "font-medium italic" : ""}>
-                  {word}{" "}
-                </span>
-              ))}
+            <h1 className="text-6xl font-light tracking-tight text-white md:text-8xl">
+              {slides[current].title}
             </h1>
-
-            <p className="mx-auto mt-6 max-w-xl text-sm font-light tracking-wide text-white/60 md:text-lg">
+            <p className="mt-6 max-w-lg text-lg font-light text-white/50 border-l border-emerald-500/30 pl-6">
               {slides[current].subtitle}
             </p>
           </motion.div>
         </div>
       </div>
-
-      {/* Modern Minimal Indicators */}
-      <div className="absolute bottom-12 left-1/2 z-30 flex -translate-x-1/2 items-center gap-8">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrent(index)}
-            className="group relative py-4"
-          >
-            <div className={`h-[1px] transition-all duration-700 ${
-              current === index ? "w-12 bg-white" : "w-6 bg-white/20 group-hover:bg-white/50"
-            }`} />
-            <span className={`absolute -top-2 left-0 text-[8px] transition-opacity ${
-              current === index ? "opacity-100" : "opacity-0"
-            }`}>
-              0{index + 1}
-            </span>
-          </button>
-        ))}
-      </div>
-
-      {/* Soft Ambient Light (Static) */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(0,0,0,0.4)_100%)]" />
     </section>
   );
 }
