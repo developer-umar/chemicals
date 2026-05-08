@@ -19,7 +19,7 @@ export default function AboutSection() {
           {/* MAIN IMAGE: Leather/Industrial Focus */}
           <div className="relative z-10 overflow-hidden rounded-2xl shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)]">
             <Image
-              src="About.jpg"
+              src="About.avif"
               alt="Tansol Industrial Excellence"
               width={700}
               height={800}
