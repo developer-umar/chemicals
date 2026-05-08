@@ -23,6 +23,12 @@ const slides = [
     title: "Tanning Excellence",
     subtitle: "Superior finishes for luxury leather.",
   },
+  {
+    id: 4,
+    image: "/leather-hero2.png",
+    title: "Premium Leather",
+    subtitle: "High-quality finish for luxury goods.",
+  },
 ];
 
 export default function HeroSection() {
