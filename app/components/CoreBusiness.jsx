@@ -19,7 +19,7 @@ export default function CoreBusiness() {
     {
       title: "Leather Trading",
       description: "Import and trading of raw, finished, and semi-finished leather materials for industrial and commercial applications.",
-      image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1400&auto=format&fit=crop",
+      image: "/leather.jpg",
     },
     {
       title: "Leather Goods",
