@@ -31,10 +31,6 @@ const slides = [
   },
 ];
 
-
-
-// Slides array same rahega...
-
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
 
@@ -61,36 +57,61 @@ export default function HeroSection() {
             alt="Hero Background"
             fill
             priority
-            // FIXED: scale-110 hata diya, sirf subtle 1.02 rakha hai for motion
             className="object-cover object-center transition-transform duration-[8000ms]"
             style={{ transform: "scale(1.02)" }} 
           />
-          {/* PREMIUM OVERLAY: Deep Forest to Black Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-black via-black/40 to-transparent opacity-80" />
-          <div className="absolute inset-0 bg-[#064e3b]/10 backdrop-brightness-[0.8]" />
+          
+          {/* RESPONSIVE OVERLAY: Mobile par niche se gradient, Desktop par side se */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80 lg:bg-gradient-to-tr lg:from-black lg:via-black/40 lg:to-transparent opacity-90" />
+          <div className="absolute inset-0 bg-[#064e3b]/10 backdrop-brightness-[0.75] lg:backdrop-brightness-[0.8]" />
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-20 flex h-full items-center px-6 md:px-20">
-        <div className="max-w-4xl text-left"> {/* Center ki jagah Left align for better professional look */}
+      {/* CONTENT CONTAINER */}
+      <div className="relative z-20 flex h-full items-center px-6 sm:px-12 lg:px-20">
+        <div className="w-full max-w-5xl text-center lg:text-left"> {/* Mobile: Center, Desktop: Left */}
           <motion.div
             key={`content-${current}`}
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="mb-4 block text-[10px] uppercase tracking-[0.5em] text-emerald-400/80 font-semibold">
+            {/* Tagline: Text size smaller for mobile */}
+            <span className="mb-4 block text-[9px] sm:text-[10px] uppercase tracking-[0.4em] text-emerald-400 font-semibold">
               Global Leather & Chemical Excellence
             </span>
-            <h1 className="text-6xl font-light tracking-tight text-white md:text-8xl">
-              {slides[current].title}
+
+            {/* Heading: Fluid font sizes */}
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-extralight tracking-tighter text-white leading-[1.1]">
+              {slides[current].title.split(" ").map((word, i) => (
+                <span key={i} className={i === 1 ? "font-medium italic" : ""}>
+                  {word}{" "}
+                </span>
+              ))}
             </h1>
-            <p className="mt-6 max-w-lg text-lg font-light text-white/50 border-l border-emerald-500/30 pl-6">
+
+            {/* Subtitle: Hidden margin on desktop, centered on mobile */}
+            <p className="mt-6 mx-auto lg:mx-0 max-w-md text-sm sm:text-base md:text-lg font-light text-white/60 border-emerald-500/30 lg:border-l lg:pl-8">
               {slides[current].subtitle}
             </p>
           </motion.div>
         </div>
       </div>
+
+      {/* MOBILE SLIDER INDICATORS */}
+      <div className="absolute bottom-10 left-0 w-full z-30 flex justify-center lg:justify-start lg:left-20 gap-3">
+        {slides.map((_, index) => (
+          <div 
+            key={index}
+            className={`h-[1px] transition-all duration-700 ${
+              current === index ? "w-10 bg-emerald-500" : "w-5 bg-white/20"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* AMBIENT GLOW */}
+      <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-emerald-900/20 blur-[120px] pointer-events-none" />
     </section>
   );
 }
