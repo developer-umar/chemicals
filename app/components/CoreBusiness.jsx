@@ -29,7 +29,7 @@ export default function CoreBusiness() {
     {
       title: "Hairon Carpets",
       description: "Luxury leather and hairon carpets crafted for premium interiors and export-grade furnishing applications.",
-      image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1400&auto=format&fit=crop",
+      image: "/hairon.webp",
     },
   ];
 
