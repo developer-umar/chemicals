@@ -7,158 +7,108 @@ export default function CoreBusiness() {
   const businesses = [
     {
       title: "PU Systems",
-      description:
-        "Premium polyurethane systems for footwear, slippers, and industrial applications sourced from trusted global suppliers.",
-
-      image:
-        "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop",
+      description: "Premium polyurethane systems for footwear, slippers, and industrial applications sourced from trusted global suppliers.",
+      image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop",
+      tag: "Most Demanding",
     },
-
     {
       title: "Leather Chemicals",
-      description:
-        "High-quality leather processing chemicals including tanning agents, dyes, finishing chemicals, oils, and auxiliaries.",
-
-      image:
-        "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=1400&auto=format&fit=crop",
+      description: "High-quality leather processing chemicals including tanning agents, dyes, finishing chemicals, oils, and auxiliaries.",
+      image: "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=1400&auto=format&fit=crop",
     },
-
     {
       title: "Leather Trading",
-      description:
-        "Import and trading of raw, finished, and semi-finished leather materials for industrial and commercial applications.",
-
-      image:
-        "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1400&auto=format&fit=crop",
+      description: "Import and trading of raw, finished, and semi-finished leather materials for industrial and commercial applications.",
+      image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=1400&auto=format&fit=crop",
     },
-
-    {
-      title: "Shoe Components",
-      description:
-        "Supplying soles, straps, footwear accessories, and industrial shoe materials for manufacturing units.",
-
-      image:
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1400&auto=format&fit=crop",
-    },
-
     {
       title: "Leather Goods",
-      description:
-        "Premium leather belts, wallets, handbags, and custom leather accessories for trading and export purposes.",
-
-      image:
-        "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1400&auto=format&fit=crop",
+      description: "Premium leather belts, wallets, handbags, and custom leather accessories for trading and export purposes.",
+      image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1400&auto=format&fit=crop",
     },
-
     {
       title: "Hairon Carpets",
-      description:
-        "Luxury leather and hairon carpets crafted for premium interiors and export-grade furnishing applications.",
-
-      image:
-        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1400&auto=format&fit=crop",
+      description: "Luxury leather and hairon carpets crafted for premium interiors and export-grade furnishing applications.",
+      image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1400&auto=format&fit=crop",
     },
   ];
 
   return (
-    <section className="section-spacing bg-slate-50 overflow-hidden">
-
+    <section className="section-spacing bg-[#0a0a0a] overflow-hidden" id="services">
       <div className="container-width">
-
-        {/* TOP CONTENT */}
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="text-center max-w-4xl mx-auto"
-        >
-
-          {/* TAG */}
-          <div className="inline-flex items-center gap-2 bg-cyan-100 border border-cyan-200 text-cyan-700 px-5 py-2 rounded-full text-sm font-semibold mb-8">
-
-            <span className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></span>
-
-            Our Core Businesses
-          </div>
-
-          {/* HEADING */}
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
-
-            Industrial Materials &
-            Global Trading
-
-            <span className="gradient-text">
-              {" "}Solutions
+        {/* HEADER AREA */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="max-w-2xl"
+          >
+            <span className="text-emerald-500 text-[10px] uppercase tracking-[0.4em] font-bold mb-4 block">
+              Market Specialties
             </span>
-          </h2>
+            <h2 className="text-4xl md:text-6xl font-extralight tracking-tighter text-white">
+              Core <span className="font-medium italic text-emerald-400">Business</span> Sectors
+            </h2>
+          </motion.div>
+          
+          <motion.p 
+             initial={{ opacity: 0, x: 30 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             transition={{ duration: 0.8 }}
+             viewport={{ once: true }}
+             className="max-w-md text-white/50 font-light text-sm md:text-base leading-relaxed"
+          >
+            Tansol delivers globally sourced industrial materials and premium leather solutions with a focus on reliability and quality.
+          </motion.p>
+        </div>
 
-          {/* DESCRIPTION */}
-          <p className="mt-8 text-lg text-slate-600 leading-relaxed">
-            FH Chemicals delivers globally sourced industrial materials,
-            leather solutions, footwear raw materials, and premium leather
-            goods with a strong focus on quality, reliability, and long-term business partnerships.
-          </p>
-        </motion.div>
-
-        {/* BUSINESS CARDS */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 mt-20">
-
+        {/* BENTO STYLE GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {businesses.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 70 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-              }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-white rounded-[35px] overflow-hidden border border-slate-200 hover:shadow-2xl hover:-translate-y-3 hover-transition"
+              className={`group relative overflow-hidden bg-[#111] border border-white/5 rounded-xl ${
+                index === 0 ? "md:col-span-2 lg:col-span-2" : ""
+              }`}
             >
-
-              {/* IMAGE */}
-              <div className="relative overflow-hidden">
-
-                {/* Replace later with your own business image if needed */}
+              {/* IMAGE AREA */}
+              <div className="relative h-64 w-full overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  width={700}
-                  height={500}
-                  className="w-full h-[280px] object-cover transition duration-700 group-hover:scale-110"
+                  fill
+                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                 />
-
-                {/* OVERLAY */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
-
-                {/* FLOATING LABEL */}
-                <div className="absolute top-5 left-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-sm font-semibold text-slate-800 shadow-md">
-
-                  FH Chemicals
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-[#111]/20 to-transparent" />
+                
+                {item.tag && (
+                  <span className="absolute top-4 left-4 bg-emerald-600 text-[10px] text-white px-3 py-1 uppercase tracking-widest font-bold rounded-full">
+                    {item.tag}
+                  </span>
+                )}
               </div>
 
-              {/* CONTENT */}
-              <div className="p-8">
-
-                <h3 className="text-2xl font-bold text-slate-900">
-                  {item.title}
-                </h3>
-
-                <p className="text-slate-600 leading-relaxed mt-5">
-                  {item.description}
-                </p>
-
-                {/* BUTTON */}
-                <button className="mt-8 flex items-center gap-2 text-cyan-600 font-semibold group-hover:gap-4 hover-transition">
-
-                  Learn More
-
-                  <span>
-                    →
-                  </span>
-                </button>
+              {/* TEXT CONTENT */}
+              <div className="p-8 relative">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h3 className="text-2xl font-light text-white tracking-tight group-hover:text-emerald-400 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="mt-4 text-white/40 text-sm font-light leading-relaxed max-w-md">
+                      {item.description}
+                    </p>
+                  </div>
+                  <div className="h-10 w-10 flex items-center justify-center border border-white/10 rounded-full group-hover:bg-emerald-600 group-hover:border-emerald-600 transition-all duration-500">
+                    <span className="text-white transform group-hover:rotate-[-45deg] transition-transform">→</span>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
