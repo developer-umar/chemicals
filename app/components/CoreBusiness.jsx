@@ -14,7 +14,7 @@ export default function CoreBusiness() {
     {
       title: "Leather Chemicals",
       description: "High-quality leather processing chemicals including tanning agents, dyes, finishing chemicals, oils, and auxiliaries.",
-      image: "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=1400&auto=format&fit=crop",
+      image: "/Chemicals.jpg",
     },
     {
       title: "Leather Trading",
