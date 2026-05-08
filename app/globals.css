@@ -1,17 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  /* Ultra-Premium Neutral Palette */
+  --background: #050505; /* Deep Black for Hero contrast */
+  --foreground: #f8fafc;
 
-  --primary: #00b8c4;
-  --primary-dark: #0891b2;
+  /* Industrial Emerald Theme (Premium Choice) */
+  --primary: #059669;        /* Emerald 600 */
+  --primary-dark: #064e3b;   /* Forest Green (Dark) */
+  --accent-gold: #fbbf24;    /* Subtle Gold for highlights */
 
-  --secondary-bg: #eef2f7;
-  --card-bg: #ffffff;
+  --secondary-bg: #0f172a;
+  --card-bg: #111827;
 
-  --muted: #475569;
-  --border: #cbd5e1;
+  --muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.1);
 }
 
 html {
@@ -22,10 +25,11 @@ body {
   background: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
-  font-family: Arial, Helvetica, sans-serif;
+  /* Premium look ke liye system fonts better hain agar custom font nahi hai */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Text Selection */
+/* Text Selection - Emerald Glow */
 ::selection {
   background: var(--primary);
   color: white;
@@ -33,30 +37,29 @@ body {
 
 /* Global Container */
 .container-width {
-  width: 90%;
-  max-width: 1400px;
+  width: 92%;
+  max-width: 1440px;
   margin: auto;
 }
 
 /* Reusable Section Spacing */
 .section-spacing {
-  padding-top: 110px;
-  padding-bottom: 110px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 /* Reusable Transition */
 .hover-transition {
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Gradient Text */
+/* Gradient Text - Emerald to Forest */
 .gradient-text {
   background: linear-gradient(
     to right,
-    #00b8c4,
-    #0891b2
+    #10b981, 
+    #059669
   );
-
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -64,23 +67,28 @@ body {
 /* Premium Button Gradient */
 .primary-gradient {
   background: linear-gradient(
-    to right,
-    #00b8c4,
-    #0891b2
+    135deg,
+    #059669 0%,
+    #064e3b 100%
   );
 }
 
-/* Glassmorphism */
+/* Glassmorphism - Updated for Dark Theme */
 .glass-effect {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Smooth Image Hover */
 .image-hover {
-  transition: transform 0.5s ease;
+  overflow: hidden;
 }
 
-.image-hover:hover {
-  transform: scale(1.05);
+.image-hover img {
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.image-hover:hover img {
+  transform: scale(1.08);
 }
