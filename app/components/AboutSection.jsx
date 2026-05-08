@@ -5,176 +5,97 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section className="section-spacing bg-white overflow-hidden">
-
-      <div className="container-width grid lg:grid-cols-2 gap-20 items-center">
-
-        {/* LEFT IMAGES */}
+    <section className="section-spacing bg-[#fafafa] overflow-hidden" id="about">
+      <div className="container-width grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        
+        {/* LEFT ASSET: Clean & Industrial */}
         <motion.div
-          initial={{ opacity: 0, x: -80 }}
+          initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
           className="relative"
         >
-
-          {/* MAIN IMAGE */}
-          <div className="relative z-10 overflow-hidden rounded-[35px] shadow-2xl">
-
-            {/* Replace later with your company/factory image */}
+          {/* MAIN IMAGE: Leather/Industrial Focus */}
+          <div className="relative z-10 overflow-hidden rounded-2xl shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)]">
             <Image
-              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1400&auto=format&fit=crop"
-              alt="FH Chemicals Team"
+              src="https://images.unsplash.com/photo-1590674867585-81c0534b6244?q=80&w=1400&auto=format&fit=crop"
+              alt="Tansol Industrial Excellence"
               width={700}
               height={800}
-              className="w-full h-[650px] object-cover image-hover"
+              className="w-full h-[500px] md:h-[600px] object-cover transition-transform duration-700 hover:scale-105"
             />
           </div>
 
-          {/* FLOATING CARD */}
+          {/* FLOATING BADGE: Minimalist */}
           <motion.div
-            animate={{ y: [0, -12, 0] }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-            }}
-            className="absolute -bottom-10 -right-10 bg-white rounded-3xl shadow-2xl border border-slate-200 p-8 z-20 hidden md:block"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -bottom-8 -right-4 md:-right-10 bg-white border border-emerald-100 p-6 md:p-8 rounded-xl shadow-xl z-20"
           >
-            <h2 className="text-5xl font-black text-cyan-600">
-              18+
-            </h2>
-
-            <p className="text-slate-500 mt-2 font-medium">
-              Years Industry Experience
-            </p>
+            <p className="text-sm uppercase tracking-widest text-emerald-600 font-bold mb-1">Since 2012</p>
+            <h3 className="text-4xl md:text-5xl font-light text-slate-900 tracking-tighter">
+              14<span className="text-emerald-500 font-bold">+</span>
+            </h3>
+            <p className="text-xs text-slate-400 font-medium uppercase tracking-tight">Years Industry Trust</p>
           </motion.div>
 
-          {/* BACKGROUND SHAPE */}
-          <div className="absolute -top-10 -left-10 w-48 h-48 bg-cyan-100 rounded-full blur-3xl opacity-70"></div>
+          {/* DECORATIVE BLUR */}
+          <div className="absolute -top-20 -left-20 w-72 h-72 bg-emerald-100/40 rounded-full blur-[100px] -z-10"></div>
         </motion.div>
 
-        {/* RIGHT CONTENT */}
+        {/* RIGHT CONTENT: High-Impact Typography */}
         <motion.div
-          initial={{ opacity: 0, x: 80 }}
+          initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-
-          {/* TAG */}
-          <div className="inline-flex items-center gap-2 bg-cyan-100 border border-cyan-200 text-cyan-700 px-5 py-2 rounded-full text-sm font-semibold mb-8">
-
-            <span className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></span>
-
-            About FH Chemicals
+          {/* TAGLINE */}
+          <div className="inline-flex items-center gap-3 text-emerald-700 mb-6 uppercase tracking-[0.3em] text-[10px] font-bold">
+            <span className="w-8 h-[1px] bg-emerald-500"></span>
+            Heritage of Quality
           </div>
 
           {/* HEADING */}
-          <h2 className="text-4xl md:text-5xl font-black leading-tight text-slate-900">
-
-            Delivering Premium Industrial &
-            Leather Solutions Since
-
-            <span className="gradient-text">
-              {" "}2008
-            </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extralight tracking-tight text-slate-950 leading-[1.1]">
+            Global Leaders in <br />
+            <span className="font-medium italic text-emerald-700 underline decoration-emerald-200 decoration-4 underline-offset-8">Tanning & PU Solutions</span>
           </h2>
 
           {/* DESCRIPTION */}
-          <p className="mt-8 text-lg text-slate-600 leading-relaxed">
-            FH Chemicals is a reputed importer and trader specializing
-            in Polyurethane (PU) Systems, Leather Chemicals, Shoe Components,
-            Finished Leather, and Industrial Raw Materials for the footwear
-            and leather industry.
-          </p>
+          <div className="mt-10 space-y-6 text-slate-600 font-light leading-relaxed text-base md:text-lg">
+            <p>
+              <strong className="text-slate-900 font-medium">Tansol</strong> is a premier global enterprise specializing in 
+              the high-performance trade of Polyurethane (PU) Systems and Advanced Leather Chemicals. 
+            </p>
+            <p>
+              We bridge the gap between global innovation and local manufacturing, sourcing superior raw materials 
+              from Turkey, China, and Europe to empower the Indian footwear and leather sectors.
+            </p>
+          </div>
 
-          <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-            With strong international sourcing networks across China,
-            Turkey, and global markets, we provide reliable products,
-            technical support, and long-term business partnerships
-            to manufacturers, traders, and industrial units across India.
-          </p>
-
-          {/* FEATURES */}
-          <div className="grid sm:grid-cols-2 gap-6 mt-12">
-
-            {/* CARD 1 */}
-            <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 hover:shadow-xl hover:-translate-y-2 hover-transition">
-
-              <div className="w-14 h-14 rounded-2xl bg-cyan-100 flex items-center justify-center mb-5">
-
-                <span className="text-2xl">
-                  🌍
-                </span>
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-900">
-                Global Sourcing
-              </h3>
-
-              <p className="text-slate-500 mt-3 leading-relaxed">
-                Trusted supplier network from China, Turkey, and international markets.
-              </p>
+          {/* MINIMAL FEATURES GRID */}
+          <div className="grid grid-cols-2 gap-8 mt-12 pt-10 border-t border-slate-100">
+            <div>
+              <h4 className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-2">Global Network</h4>
+              <p className="text-sm text-slate-500 leading-relaxed">Direct sourcing from world-class chemical hubs.</p>
             </div>
-
-            {/* CARD 2 */}
-            <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 hover:shadow-xl hover:-translate-y-2 hover-transition">
-
-              <div className="w-14 h-14 rounded-2xl bg-cyan-100 flex items-center justify-center mb-5">
-
-                <span className="text-2xl">
-                  🧪
-                </span>
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-900">
-                Premium Quality
-              </h3>
-
-              <p className="text-slate-500 mt-3 leading-relaxed">
-                COA-backed products ensuring reliability and industrial standards.
-              </p>
+            <div>
+              <h4 className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-2">Quality Backed</h4>
+              <p className="text-sm text-slate-500 leading-relaxed">COA-certified products for industrial precision.</p>
             </div>
-
-            {/* CARD 3 */}
-            <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 hover:shadow-xl hover:-translate-y-2 hover-transition">
-
-              <div className="w-14 h-14 rounded-2xl bg-cyan-100 flex items-center justify-center mb-5">
-
-                <span className="text-2xl">
-                  🏭
-                </span>
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-900">
-                Industrial Support
-              </h3>
-
-              <p className="text-slate-500 mt-3 leading-relaxed">
-                Technical assistance and product guidance for manufacturing units.
-              </p>
+            <div>
+              <h4 className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-2">Technical Core</h4>
+              <p className="text-sm text-slate-500 leading-relaxed">End-to-end guidance for production units.</p>
             </div>
-
-            {/* CARD 4 */}
-            <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 hover:shadow-xl hover:-translate-y-2 hover-transition">
-
-              <div className="w-14 h-14 rounded-2xl bg-cyan-100 flex items-center justify-center mb-5">
-
-                <span className="text-2xl">
-                  🤝
-                </span>
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-900">
-                Trusted Partnership
-              </h3>
-
-              <p className="text-slate-500 mt-3 leading-relaxed">
-                Long-term transparent business relationships with reliable support.
-              </p>
+            <div>
+              <h4 className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-2">Modern Trade</h4>
+              <p className="text-sm text-slate-500 leading-relaxed">Transparent, reliable, and scalable partnerships.</p>
             </div>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
