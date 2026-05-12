@@ -12,12 +12,12 @@ const businesses = [
   {
     title: "Leather Chemicals",
     description: "High-quality leather processing chemicals including tanning agents, dyes, finishing chemicals, oils, and auxiliaries.",
-    image: "https://images.unsplash.com/photo-1616423641454-ec9935946192?q=80&w=1400&auto=format&fit=crop",
+    image: "Chemicals.jpg",
   },
   {
     title: "Leather Trading",
     description: "Import and trading of raw, finished, and semi-finished leather materials for industrial and commercial applications.",
-    image: "https://images.unsplash.com/photo-1590736961918-71e8c4014744?q=80&w=1400&auto=format&fit=crop",
+    image: "leather.jpg",
   },
   {
     title: "Leather Goods",
