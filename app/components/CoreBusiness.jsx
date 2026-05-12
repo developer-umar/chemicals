@@ -39,7 +39,7 @@ const businesses = [
 export default function MasonryShowcase() {
   return (
     <section className="bg-white py-20 px-4 sm:px-10">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto " id="products">
         
         {/* Simple & Clean Header */}
         <div className="mb-12 space-y-2">
