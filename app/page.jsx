@@ -37,14 +37,14 @@ export default function HomePage() {
       
       <AboutSection/>
       <CoreBusiness/>
-      <ProductCategories/>
+      {/* <ProductCategories/>
       <WhyChooseUs/>
       <GlobalNetwork/>
       <TeamSection/>
       <IndustriesSection/>
       <GallerySection/>
       <ClientShowcase/>
-      <ParallaxCTA/>
+      <ParallaxCTA/> */}
       <Footer/>
       
     </main>
