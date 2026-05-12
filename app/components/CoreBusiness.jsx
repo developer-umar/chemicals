@@ -4,7 +4,61 @@ import { useRef } from "react";
 import Image from "next/image";
 
 // Data stays exactly as you provided
-const businesses = [ /* ... your data array ... */ ];
+const businesses = [ 
+
+    {
+
+      title: "PU Systems",
+
+      description: "Premium polyurethane systems for footwear, slippers, and industrial applications sourced from trusted global suppliers.",
+
+      image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop",
+
+      tag: "Most Demanding",
+
+    },
+
+    {
+
+      title: "Leather Chemicals",
+
+      description: "High-quality leather processing chemicals including tanning agents, dyes, finishing chemicals, oils, and auxiliaries.",
+
+      image: "/Chemicals.jpg",
+
+    },
+
+    {
+
+      title: "Leather Trading",
+
+      description: "Import and trading of raw, finished, and semi-finished leather materials for industrial and commercial applications.",
+
+      image: "/leather.jpg",
+
+    },
+
+    {
+
+      title: "Leather Goods",
+
+      description: "Premium leather belts, wallets, handbags, and custom leather accessories for trading and export purposes.",
+
+      image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1400&auto=format&fit=crop",
+
+    },
+
+    {
+
+      title: "Hairon Carpets",
+
+      description: "Luxury leather and hairon carpets crafted for premium interiors and export-grade furnishing applications.",
+
+      image: "/hairon.webp",
+
+    },
+
+  ]; 
 
 export default function PremiumShowcase() {
   const containerRef = useRef(null);
