@@ -2,12 +2,12 @@ import AboutSection from "./components/AboutSection";
 import CoreBusiness from "./components/CoreBusiness";
 import GlobalNetwork from "./components/GlobalNetwork";
 import Navbar from "./components/Navbar";
-import TeamSection from "./components/TeamSection";
 import WhyChooseUs from "./components/WhyChooseUs";
 import ClientShowcase from "./components/ClientShowcase";
 import ParallaxCTA from "./components/ParallaxCTA";
 import Footer from "./components/Footer";
 import HeroSection from "./components/Hero";
+import TeamSection from "./components/TeamSection";
 export const metadata = {
   title:
     "FH Chemicals | PU Chemicals & Leather Tanning Chemicals Manufacturer",
@@ -38,6 +38,7 @@ export default function HomePage() {
       <WhyChooseUs/>
       <GlobalNetwork/>
       <TeamSection/>
+      
       
    
       <ClientShowcase/>
