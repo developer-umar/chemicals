@@ -8,6 +8,7 @@ import ParallaxCTA from "./components/ParallaxCTA";
 import Footer from "./components/Footer";
 import HeroSection from "./components/Hero";
 import TeamSection from "./components/TeamSection";
+import XuchuanPartnership from "./components/Dealership";
 export const metadata = {
   title:
     "FH Chemicals | PU Chemicals & Leather Tanning Chemicals Manufacturer",
@@ -36,6 +37,8 @@ export default function HomePage() {
       <CoreBusiness/>
     
       <WhyChooseUs/>
+      <XuchuanPartnership/>
+      
       <GlobalNetwork/>
       <TeamSection/>
      
