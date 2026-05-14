@@ -8,19 +8,19 @@ const teamMembers = [
     name: "Mr. Nadeem Ajmal",
     role: "Proprietor & Director",
     description: "18+ years of expertise in leather chemicals, global sourcing, and industrial trading solutions.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop",
+    image: "/logo.png",
   },
   {
     name: "Marketing Team",
     role: "Business Development",
     description: "Dedicated professionals handling global client communication and strategic order management.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop",
+    image: "/logo.png",
   },
   {
     name: "Technical Experts",
     role: "Industrial Support",
     description: "Experienced specialists providing product guidance and industrial troubleshooting assistance.",
-    image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1200&auto=format&fit=crop",
+    image: "/logo.png",
   },
 ];
 
