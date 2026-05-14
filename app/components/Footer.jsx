@@ -6,33 +6,36 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden bg-[#0A0F14] text-white pt-24">
-      {/* RADIANT BACKGROUND GLOW */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-500/10 rounded-full blur-[120px] -z-0"></div>
+    <footer className="relative overflow-hidden bg-[#05080A] text-white pt-24">
+      {/* RADIANT EMERALD GRADIENT */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-emerald-500/5 rounded-full blur-[140px] -z-0"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
-        {/* PRE-FOOTER CTA CARD */}
+        {/* PRE-FOOTER CTA CARD - Updated Branding */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-white/[0.03] backdrop-blur-xl p-10 md:p-16 mb-24 shadow-2xl"
+          className="relative overflow-hidden rounded-[3rem] border border-white/5 bg-white/[0.02] backdrop-blur-2xl p-10 md:p-16 mb-24 shadow-2xl"
         >
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
+              <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">
+                Established 2012
+              </div>
               <h2 className="text-4xl md:text-6xl font-black leading-[1.1] mb-6 tracking-tighter">
                 Let's Build Strong <br />
-                <span className="text-emerald-500 italic font-serif font-light">Industrial Futures</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600 italic font-serif font-light">Industrial Partnerships</span>
               </h2>
-              <p className="text-slate-400 text-lg max-w-xl">
-                Partner with Tansol Exims for premium leather chemicals, PU systems, and dependable global sourcing solutions.
+              <p className="text-slate-400 text-lg max-w-xl font-medium">
+                Tansol Exim is a reputed importer and trader of PU Systems, footwear components, and specialized leather chemicals[cite: 12].
               </p>
             </div>
             <div className="flex lg:justify-end">
-              <button className="bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-xs transition-all active:scale-95 shadow-xl shadow-emerald-900/20">
+              <a href="tel:+919839336620" className="bg-emerald-600 hover:bg-emerald-500 text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs transition-all active:scale-95 shadow-xl shadow-emerald-900/20">
                 Contact Our Team
-              </button>
+              </a>
             </div>
           </div>
         </motion.div>
@@ -43,47 +46,45 @@ export default function Footer() {
           {/* BRAND COLUMN */}
           <div className="space-y-6">
             <h3 className="text-2xl font-black tracking-tighter">
-              Tansol <span className="text-emerald-500">Exims</span>
+              TANSOL <span className="text-emerald-500 font-serif italic">EXIM</span>
             </h3>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              A premier global trading house specializing in high-performance industrial chemicals and specialized footwear components.
+            <p className="text-slate-400 text-sm leading-relaxed max-w-xs font-medium">
+              A 100% import-based firm supplying globally sourced raw materials to the Indian footwear and leather market[cite: 40].
             </p>
-            {/* SOCIAL PLACEHOLDERS */}
-            <div className="flex gap-3">
-              {[1, 2, 3].map((_, i) => (
-                <div key={i} className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-emerald-600 transition-colors cursor-pointer">
-                  <div className="w-4 h-4 bg-white/40 rounded-sm"></div>
-                </div>
-              ))}
+            <div className="pt-2">
+               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 block mb-2">Business Type</span>
+               <p className="text-xs font-bold text-emerald-500 uppercase tracking-widest">Importer & Trader [cite: 10]</p>
             </div>
           </div>
 
-          {/* LINKS COLUMN */}
+          {/* PRODUCTS COLUMN - Accurate as per PDF */}
           <div>
-            <h4 className="text-sm font-black uppercase tracking-[0.2em] text-emerald-500 mb-8">Navigation</h4>
+            <h4 className="text-sm font-black uppercase tracking-[0.2em] text-white mb-8 border-b border-white/5 pb-4">Core Portfolio</h4>
             <ul className="space-y-4 text-slate-400 text-sm font-medium">
-              {['Home', 'Company Profile', 'Product Range', 'Global Network', 'Technical Support'].map((link) => (
-                <li key={link} className="hover:text-white transition-colors cursor-pointer flex items-center gap-2 group">
-                  <span className="w-0 h-[1px] bg-emerald-500 group-hover:w-3 transition-all"></span>
-                  {link}
+              {['PU Systems for Shoes', 'Shoe Components', 'Finished Leather', 'Leather Chemicals', 'Industrial Auxiliaries'].map((item) => (
+                <li key={item} className="hover:text-emerald-400 transition-colors cursor-default flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-900"></span>
+                  {item} 
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* PRODUCTS COLUMN */}
+          {/* NETWORK COLUMN */}
           <div>
-            <h4 className="text-sm font-black uppercase tracking-[0.2em] text-emerald-500 mb-8">Core Portfolio</h4>
-            <ul className="space-y-4 text-slate-400 text-sm font-medium">
-              {['Polyurethane Systems', 'Leather Tanning Agents', 'Finishing Auxiliaries', 'Finished Leather', 'Industrial Logistics'].map((item) => (
-                <li key={item} className="hover:text-emerald-400 transition-colors cursor-pointer">{item}</li>
-              ))}
-            </ul>
+            <h4 className="text-sm font-black uppercase tracking-[0.2em] text-white mb-8 border-b border-white/5 pb-4">Global Network</h4>
+            <p className="text-slate-400 text-sm leading-relaxed mb-6 font-medium">
+              Maintaining long-term relationships with reputed suppliers from China, Turkey, and other global hubs.
+            </p>
+            <div className="flex items-center gap-3 text-emerald-500">
+               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" strokeLinecap="round" strokeLinejoin="round"/></svg>
+               <span className="text-[10px] font-black uppercase tracking-widest">COA Backed Quality </span>
+            </div>
           </div>
 
-          {/* CONTACT COLUMN */}
+          {/* CONTACT COLUMN - 100% Accurate Data */}
           <div>
-            <h4 className="text-sm font-black uppercase tracking-[0.2em] text-emerald-500 mb-8">Official HQ</h4>
+            <h4 className="text-sm font-black uppercase tracking-[0.2em] text-white mb-8 border-b border-white/5 pb-4">Official HQ</h4>
             <div className="space-y-6">
               <div className="flex gap-4">
                 <div className="shrink-0 w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-500">
@@ -91,7 +92,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Phone</p>
-                  <p className="text-sm font-bold text-slate-200">+91-9839336620</p>
+                  <p className="text-sm font-bold text-slate-200">+91-9839336620 [cite: 6]</p>
                 </div>
               </div>
 
@@ -101,7 +102,9 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase font-bold text-slate-500 tracking-widest">Address</p>
-                  <p className="text-sm font-bold text-slate-200 leading-tight">Plot No. 25, Lari Compound, Jajmau, Kanpur</p>
+                  <p className="text-sm font-bold text-slate-200 leading-tight">
+                    Plot No. 25, Lari Compound, Gajjupurwa, Jajmau, Kanpur [cite: 4]
+                  </p>
                 </div>
               </div>
             </div>
@@ -111,12 +114,12 @@ export default function Footer() {
 
         {/* BOTTOM COPYRIGHT AREA */}
         <div className="border-t border-white/5 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-slate-500 text-xs font-medium">
-            © {currentYear} <span className="text-slate-300">Tansol Exims Global</span>. All Rights Reserved.
+          <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">
+            © {currentYear} TANSOL EXIM. All Rights Reserved.
           </p>
-          <div className="flex gap-8">
-            <span className="text-slate-500 text-[10px] font-black uppercase tracking-widest">GST: 09BEJPA6911E1ZR</span>
-            <span className="text-slate-500 text-[10px] font-black uppercase tracking-widest cursor-pointer hover:text-emerald-500 transition-colors">Privacy Policy</span>
+          <div className="flex flex-wrap justify-center gap-8">
+            <span className="text-emerald-500/60 text-[10px] font-black uppercase tracking-widest">GST: 09BEJPA6911E1ZR </span>
+            <span className="text-slate-500 text-[10px] font-black uppercase tracking-widest cursor-pointer hover:text-emerald-500 transition-colors">Proprietor: Mr. Nadeem Ajmal </span>
           </div>
         </div>
 
