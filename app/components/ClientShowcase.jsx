@@ -29,7 +29,7 @@ export default function ClientShowcase() {
           className="w-full h-full object-cover opacity-40 grayscale"
         />
         {/* Subtle Dark Gradients - Just enough to read text */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-black"></div>
+        <div className="absolute inset-0 "></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
