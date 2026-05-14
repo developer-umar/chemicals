@@ -19,7 +19,7 @@ const clients = [
 
 export default function ClientShowcase() {
   return (
-    <section className="relative overflow-hidden py-32 bg-black">
+    <section className="relative overflow-hidden py-32 ">
       
       {/* THE MAIN INDUSTRIAL BACKGROUND */}
       <div className="absolute inset-0 z-0">
