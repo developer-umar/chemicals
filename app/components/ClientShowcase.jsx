@@ -19,83 +19,90 @@ const clients = [
 
 export default function ClientShowcase() {
   return (
-    <section className="relative overflow-hidden py-32 ">
+    <section className="relative overflow-hidden py-24 sm:py-32 min-h-[800px] flex flex-col justify-center">
       
-      {/* THE MAIN INDUSTRIAL BACKGROUND */}
+      {/* FULL RESPONSIVE INDUSTRIAL BACKGROUND */}
       <div className="absolute inset-0 z-0">
         <img 
           src="/client/industries.webp" 
           alt="Industrial Background" 
-          className="w-full h-full object-cover opacity-40 grayscale"
+          className="w-full h-full object-cover object-center"
         />
-        {/* Subtle Dark Gradients - Just enough to read text */}
-        <div className="absolute inset-0 "></div>
+        {/* Very Light Overlay - Just to make white text pop without losing image clarity */}
+        <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-[2px]"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+        {/* HEADER AREA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="max-w-3xl mb-20"
+          className="max-w-3xl mb-16"
         >
-          {/* MINIMAL TAG */}
           <div className="flex items-center gap-3 mb-6">
-            <span className="w-10 h-[1px] bg-emerald-500"></span>
-            <span className="text-emerald-500 font-bold uppercase tracking-[0.3em] text-[10px]">Trusted Partners</span>
+            <span className="w-12 h-[2px] bg-emerald-500"></span>
+            <span className="text-emerald-400 font-black uppercase tracking-[0.3em] text-[10px] drop-shadow-md">
+              Industry Leaders
+            </span>
           </div>
 
-          <h2 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] tracking-tighter">
+          <h2 className="text-5xl md:text-7xl font-black text-white leading-[1.1] tracking-tighter drop-shadow-2xl">
             Powering India's <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600 italic font-serif">Industrial Excellence</span>
+            <span className="text-emerald-400 italic font-serif">Manufacturing Giants</span>
           </h2>
         </motion.div>
       </div>
 
-      {/* DYNAMIC MARQUEE - Circular Image-Showing Cards */}
-      <div className="flex overflow-hidden select-none gap-8 mask-fade-edges relative z-10">
+      {/* DYNAMIC MARQUEE - Rectangular Corporate Cards */}
+      <div className="flex overflow-hidden select-none gap-6 mask-fade-edges relative z-10">
         <motion.div
           animate={{ x: ["0%", "-100%"] }}
-          transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-          className="flex flex-nowrap gap-8 min-w-full items-center"
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          className="flex flex-nowrap gap-6 min-w-full items-center py-4"
         >
           {[...clients, ...clients].map((client, index) => (
             <div
               key={index}
-              className="group relative min-w-[280px] h-[350px] flex flex-col items-center justify-center rounded-[3rem] border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-500 hover:border-emerald-500/40 hover:bg-emerald-500/5 shadow-2xl"
+              className="group relative min-w-[320px] h-[180px] bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-2xl p-8 flex flex-col justify-between transition-all duration-500 hover:border-emerald-500/50 hover:bg-slate-900 shadow-2xl"
             >
-              {/* CIRCULAR LOGO PLACEHOLDER */}
-              <div className="w-24 h-24 rounded-full border border-white/10 bg-black/40 backdrop-blur-xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-emerald-500/50 transition-all duration-500 overflow-hidden shadow-inner">
-                {/* Space for Logo - Shows Initials for now */}
-                <span className="text-white font-black text-2xl tracking-tighter opacity-80 group-hover:text-emerald-400 group-hover:opacity-100 transition-all font-mono">
-                   {client.split(' ').map(word => word[0]).join('').substring(0, 2)}
-                </span>
+              <div className="flex justify-between items-start">
+                {/* Rectangular Logo Slot */}
+                <div className="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center group-hover:bg-emerald-500 group-hover:text-white transition-all duration-500">
+                  <span className="font-black text-lg text-emerald-500 group-hover:text-white transition-colors">
+                    {client[0]}
+                  </span>
+                </div>
+                <div className="text-[10px] font-black text-emerald-500/40 uppercase tracking-widest">
+                  Verified Partner
+                </div>
               </div>
               
-              <h3 className="text-lg font-bold text-white/90 text-center px-6 leading-tight group-hover:text-white">
-                {client}
-              </h3>
-              
-              <div className="absolute bottom-10 w-8 h-[2px] bg-white/10 group-hover:w-16 group-hover:bg-emerald-500 transition-all duration-500"></div>
+              <div>
+                <h3 className="text-xl font-bold text-white tracking-tight line-clamp-1">
+                  {client}
+                </h3>
+                <div className="h-1 w-0 bg-emerald-500 mt-2 group-hover:w-full transition-all duration-500"></div>
+              </div>
             </div>
           ))}
         </motion.div>
       </div>
 
-      {/* STATS AREA - Sleek & Transparent */}
-      <div className="max-w-7xl mx-auto px-6 mt-24 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/10 pt-16">
-          <div className="text-left group">
-            <span className="text-5xl font-bold text-white group-hover:text-emerald-500 transition-colors">14+</span>
-            <p className="text-slate-500 text-xs font-black uppercase tracking-[0.2em] mt-2">Years of Industry Heritage</p>
+      {/* STATS AREA - Bottom Floating Bar */}
+      <div className="max-w-7xl mx-auto px-6 mt-16 relative z-10 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl md:rounded-full overflow-hidden">
+          <div className="px-10 py-8 text-center border-b md:border-b-0 md:border-r border-white/10">
+            <p className="text-4xl font-black text-emerald-400">14+</p>
+            <p className="text-white/70 text-[10px] font-bold uppercase tracking-widest mt-1">Years Legacy</p>
           </div>
-          <div className="text-left group">
-            <span className="text-5xl font-bold text-white group-hover:text-emerald-500 transition-colors">Global</span>
-            <p className="text-slate-500 text-xs font-black uppercase tracking-[0.2em] mt-2">Strategic Sourcing Network</p>
+          <div className="px-10 py-8 text-center border-b md:border-b-0 md:border-r border-white/10">
+            <p className="text-4xl font-black text-emerald-400">Global</p>
+            <p className="text-white/70 text-[10px] font-bold uppercase tracking-widest mt-1">Sourcing Hub</p>
           </div>
-          <div className="text-left group">
-            <span className="text-5xl font-bold text-white group-hover:text-emerald-500 transition-colors">100%</span>
-            <p className="text-slate-500 text-xs font-black uppercase tracking-[0.2em] mt-2">Quality COA Assurance</p>
+          <div className="px-10 py-8 text-center">
+            <p className="text-4xl font-black text-emerald-400">100%</p>
+            <p className="text-white/70 text-[10px] font-bold uppercase tracking-widest mt-1">COA Certified</p>
           </div>
         </div>
       </div>
