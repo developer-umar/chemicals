@@ -1,5 +1,4 @@
 import AboutSection from "./components/AboutSection";
-import GallerySection from "./components/GallerySection";
 import CoreBusiness from "./components/CoreBusiness";
 import GlobalNetwork from "./components/GlobalNetwork";
 import IndustriesSection from "./components/IndustriesSection";
@@ -41,7 +40,7 @@ export default function HomePage() {
       <GlobalNetwork/>
       <TeamSection/>
       <IndustriesSection/>
-      <GallerySection/>
+   
       <ClientShowcase/>
       <ParallaxCTA/> 
       <Footer/>
