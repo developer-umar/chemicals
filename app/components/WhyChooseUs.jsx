@@ -1,169 +1,130 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Award, Globe, ShieldCheck, Handshake, ArrowRight } from "lucide-react";
+
+const features = [
+  {
+    number: "18+",
+    title: "Years Experience",
+    description: "Deep expertise in leather chemicals and global footwear sourcing.",
+    icon: <Award className="w-8 h-8 text-cyan-600" />,
+  },
+  {
+    number: "Global",
+    title: "Import Network",
+    description: "Strategic partnerships across China, Turkey, and Europe.",
+    icon: <Globe className="w-8 h-8 text-cyan-600" />,
+  },
+  {
+    number: "100%",
+    title: "Quality Assurance",
+    description: "Every product is COA-backed for industrial reliability.",
+    icon: <ShieldCheck className="w-8 h-8 text-cyan-600" />,
+  },
+  {
+    number: "Trusted",
+    title: "Business Relations",
+    description: "Built on transparency and long-term service commitment.",
+    icon: <Handshake className="w-8 h-8 text-cyan-600" />,
+  },
+];
+
+// Animation Variants for Performance & Cleanliness
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
 
 export default function WhyChooseUs() {
-  const features = [
-    {
-      number: "18+",
-      title: "Years Experience",
-      description:
-        "Strong industry expertise in leather chemicals, footwear raw materials, and global sourcing.",
-      icon: "🏆",
-    },
-
-    {
-      number: "Global",
-      title: "Import Network",
-      description:
-        "Trusted sourcing partnerships from China, Turkey, and international supplier markets.",
-      icon: "🌍",
-    },
-
-    {
-      number: "100%",
-      title: "Quality Assurance",
-      description:
-        "COA-backed products ensuring premium industrial quality and reliable performance.",
-      icon: "🧪",
-    },
-
-    {
-      number: "Trusted",
-      title: "Business Relations",
-      description:
-        "Transparent business practices with long-term support and dependable service.",
-      icon: "🤝",
-    },
-  ];
-
   return (
-    <section className="section-spacing bg-slate-50 overflow-hidden relative">
+    <section className="relative py-24 bg-[#fafafa] overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-cyan-100/50 rounded-full blur-[100px]" />
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-100/40 rounded-full blur-[100px]" />
 
-      {/* BACKGROUND GLOW */}
-      <div className="absolute top-0 left-0 w-[450px] h-[450px] bg-cyan-100 rounded-full blur-3xl opacity-40"></div>
-
-      <div className="container-width relative z-10">
-
-        {/* TOP CONTENT */}
-        <motion.div
-          initial={{ opacity: 0, y: 70 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="text-center max-w-4xl mx-auto"
-        >
-
-          {/* TAG */}
-          <div className="inline-flex items-center gap-2 bg-cyan-100 border border-cyan-200 text-cyan-700 px-5 py-2 rounded-full text-sm font-semibold mb-8">
-
-            <span className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></span>
-
-            Why Choose FH Chemicals
-          </div>
-
-          {/* HEADING */}
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
-
-            Trusted Industrial &
-            Global Trading
-
-            <span className="gradient-text">
-              {" "}Partner
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Header Section */}
+        <div className="max-w-3xl mb-20">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-2 mb-6"
+          >
+            <span className="w-12 h-[1px] bg-cyan-500"></span>
+            <span className="text-cyan-600 font-bold uppercase tracking-widest text-xs">
+              Why FH Chemicals
             </span>
-          </h2>
+          </motion.div>
 
-          {/* DESCRIPTION */}
-          <p className="mt-8 text-lg text-slate-600 leading-relaxed">
-            We combine premium industrial products, reliable sourcing,
-            technical expertise, and transparent business practices
-            to deliver long-term value for manufacturers, traders,
-            wholesalers, and production units.
-          </p>
-        </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight"
+          >
+            Trusted Industrial & <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-700">
+              Global Trading Partner
+            </span>
+          </motion.h2>
+        </div>
 
-        {/* FEATURE GRID */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 mt-20">
-
+        {/* Feature Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
           {features.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 70 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-              }}
-              viewport={{ once: true }}
-              className="group relative bg-white rounded-[35px] border border-slate-200 p-8 hover:shadow-2xl hover:-translate-y-3 hover-transition overflow-hidden"
+              variants={itemVariants}
+              whileHover={{ y: -10 }}
+              className="group p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-xl hover:shadow-cyan-500/5 transition-all duration-300"
             >
-
-              {/* ICON */}
-              <div className="w-20 h-20 rounded-3xl bg-cyan-100 flex items-center justify-center text-4xl mb-8 group-hover:scale-110 hover-transition">
-
+              <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-10 group-hover:bg-cyan-600 group-hover:text-white transition-colors duration-300">
                 {item.icon}
               </div>
-
-              {/* NUMBER */}
-              <h3 className="text-5xl font-black gradient-text">
-                {item.number}
-              </h3>
-
-              {/* TITLE */}
-              <h4 className="text-2xl font-bold text-slate-900 mt-5">
-                {item.title}
-              </h4>
-
-              {/* DESCRIPTION */}
-              <p className="text-slate-600 leading-relaxed mt-5">
+              <h3 className="text-4xl font-bold text-slate-900 mb-2">{item.number}</h3>
+              <h4 className="text-xl font-bold text-slate-800 mb-4">{item.title}</h4>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6">
                 {item.description}
               </p>
-
-              {/* HOVER GLOW */}
-              <div className="absolute -bottom-24 -right-24 w-52 h-52 bg-cyan-100 rounded-full blur-3xl opacity-0 group-hover:opacity-100 hover-transition"></div>
+              <div className="w-full h-[1px] bg-slate-100 group-hover:bg-cyan-200 transition-colors" />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* BOTTOM STRIP */}
+        {/* Professional Call-to-Action Strip */}
         <motion.div
-          initial={{ opacity: 0, y: 70 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mt-20 bg-white rounded-[40px] border border-slate-200 shadow-xl p-10 lg:p-14"
+          className="mt-16 p-8 md:p-12 bg-slate-900 rounded-[2.5rem] flex flex-col md:flex-row items-center justify-between gap-8"
         >
-
-          <div className="grid lg:grid-cols-3 gap-10 items-center">
-
-            {/* LEFT */}
-            <div>
-              <h3 className="text-3xl font-black text-slate-900 leading-tight">
-
-                Delivering Industrial Excellence
-                Through Quality &
-                Global Sourcing
-              </h3>
-            </div>
-
-            {/* CENTER */}
-            <div>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                FH Chemicals continues to serve the footwear and leather
-                industry with premium imported materials, technical support,
-                and dependable business partnerships across India.
-              </p>
-            </div>
-
-            {/* RIGHT */}
-            <div className="flex lg:justify-end">
-
-              <button className="primary-gradient text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:scale-105 hover-transition">
-
-                Explore Our Products
-              </button>
-            </div>
+          <div className="text-center md:text-left">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              Ready to elevate your production?
+            </h3>
+            <p className="text-slate-400">Join 500+ manufacturers using our premium chemicals.</p>
           </div>
+          <button className="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-white px-8 py-4 rounded-full font-bold transition-all group">
+            Explore Portfolio
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </button>
         </motion.div>
       </div>
     </section>
