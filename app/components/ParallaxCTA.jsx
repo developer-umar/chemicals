@@ -4,83 +4,79 @@ import { motion } from "framer-motion";
 
 export default function ParallaxCTA() {
   return (
-    <section className="relative h-[700px] overflow-hidden bg-slate-900">
+    <section className="relative py-24 md:py-32 overflow-hidden bg-white">
       
-      {/* HIGH-END INDUSTRIAL BACKGROUND */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1800&auto=format&fit=crop"
-          alt="Tansol Industrial Facility"
-          className="w-full h-full object-cover opacity-30 grayscale transition-transform duration-1000 group-hover:scale-105"
-        />
-        {/* Subtle Gradient to make text readable */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/40 to-slate-950"></div>
+      {/* PROFESSIONAL LIGHT BACKGROUND DECOR */}
+      {/* 1. Subtle Mesh Grid (Engineering Vibe) */}
+      <div className="absolute inset-0 opacity-[0.03]" 
+           style={{ backgroundImage: 'radial-gradient(#059669 1px, transparent 1px)', backgroundSize: '32px 32px' }}>
       </div>
+      
+      {/* 2. Soft Emerald Glows for Depth */}
+      <div className="absolute -top-24 -left-24 w-[500px] h-[500px] bg-emerald-50 rounded-full blur-[120px] opacity-70"></div>
+      <div className="absolute -bottom-24 -right-24 w-[500px] h-[500px] bg-emerald-50 rounded-full blur-[120px] opacity-70"></div>
 
-      {/* DYNAMIC EMERALD GLOW */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[120px] -z-10"></div>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="bg-slate-50 border border-slate-200/60 rounded-[3rem] p-8 md:p-20 shadow-sm overflow-hidden relative">
+          
+          {/* DECORATIVE ELEMENT */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
-      <div className="relative z-10 h-full flex items-center justify-center px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative max-w-6xl w-full bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[3rem] p-10 md:p-20 overflow-hidden shadow-2xl"
-        >
-          {/* TOP TAG */}
-          <div className="inline-flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-10">
-            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-            Global Sourcing Leader
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* LEFT: TEXT CONTENT */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            
+            {/* LEFT SIDE: THE PITCH */}
             <div>
-              <h2 className="text-5xl md:text-7xl font-black text-white leading-[1] tracking-tighter mb-8">
-                Ready to Scale <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600 italic font-serif">Your Production?</span>
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                className="inline-flex items-center gap-2 bg-emerald-100/50 border border-emerald-200 text-emerald-700 px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8"
+              >
+                <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full"></span>
+                Partner with Tansol Exims
+              </motion.div>
+
+              <h2 className="text-5xl md:text-7xl font-black text-slate-900 leading-[1.1] tracking-tighter mb-8">
+                Elevate Your <br />
+                <span className="text-emerald-600 italic font-serif font-light underline decoration-emerald-200 underline-offset-8">Production Quality</span>
               </h2>
-              
-              <p className="text-slate-400 text-lg leading-relaxed max-w-lg mb-10 font-medium">
-                Tansol Exims serves the footwear and leather industry with premium imported materials and dependable technical support across India.
+
+              <p className="text-slate-600 text-lg leading-relaxed max-w-lg mb-10 font-medium">
+                Connect with our technical experts to explore premium industrial chemicals, footwear materials, and global sourcing solutions tailored for your business.
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <button className="bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-5 rounded-full font-bold transition-all active:scale-95 shadow-lg shadow-emerald-900/20">
-                  Explore Catalog
+                <button className="bg-slate-900 hover:bg-emerald-700 text-white px-10 py-5 rounded-2xl font-bold transition-all active:scale-95 shadow-xl shadow-slate-200">
+                  Contact Our Team
                 </button>
-                <button className="bg-white/5 border border-white/10 text-white px-10 py-5 rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-md">
-                  Contact Experts
+                <button className="bg-white border border-slate-200 text-slate-700 px-10 py-5 rounded-2xl font-bold hover:bg-slate-50 transition-all shadow-sm">
+                  View Catalog
                 </button>
               </div>
             </div>
 
-            {/* RIGHT: INTEGRATED STATS */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white/[0.02] border border-white/5 rounded-3xl p-8 backdrop-blur-md hover:border-emerald-500/30 transition-colors">
-                <span className="text-4xl font-black text-white block mb-1">18+</span>
-                <span className="text-slate-500 text-[10px] font-black uppercase tracking-widest leading-none">Years Expertise</span>
+            {/* RIGHT SIDE: QUICK STATS / TRUST BOX */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:border-emerald-200 transition-colors">
+                <p className="text-4xl font-black text-slate-900 mb-1 tracking-tighter">18+</p>
+                <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">Years of Trust</p>
               </div>
-              <div className="bg-white/[0.02] border border-white/5 rounded-3xl p-8 backdrop-blur-md hover:border-emerald-500/30 transition-colors">
-                <span className="text-4xl font-black text-white block mb-1">COA</span>
-                <span className="text-slate-500 text-[10px] font-black uppercase tracking-widest leading-none">Certified Quality</span>
+              <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:border-emerald-200 transition-colors">
+                <p className="text-4xl font-black text-slate-900 mb-1 tracking-tighter">Global</p>
+                <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">Import Network</p>
               </div>
-              <div className="col-span-2 bg-emerald-600/10 border border-emerald-500/20 rounded-3xl p-8 backdrop-blur-md flex items-center justify-between">
+              <div className="sm:col-span-2 bg-emerald-600 p-10 rounded-[2.5rem] text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-xl shadow-emerald-200">
                 <div>
-                  <span className="text-2xl font-black text-emerald-400 block">Global</span>
-                  <span className="text-slate-500 text-[10px] font-black uppercase tracking-widest leading-none">Supply Network</span>
+                  <p className="text-2xl font-bold mb-1 tracking-tight">Need technical help?</p>
+                  <p className="text-emerald-100 text-sm font-medium">Our specialists are one call away.</p>
                 </div>
-                <div className="h-12 w-12 rounded-full bg-emerald-500 flex items-center justify-center">
-                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </div>
+                <button className="bg-white text-emerald-700 px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-emerald-50 transition-all">
+                  Get a Callback
+                </button>
               </div>
             </div>
-          </div>
 
-          {/* BACKGROUND DECOR */}
-          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -z-10"></div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
