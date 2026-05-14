@@ -2,202 +2,144 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Globe2, ArrowUpRight, MapPin } from "lucide-react";
+
+const countries = [
+  {
+    country: "China",
+    specialty: "PU Systems & Raw Materials",
+    description: "Primary hub for premium industrial polymers and footwear manufacturing essentials.",
+    image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=1400&auto=format&fit=crop",
+    coords: { top: "35%", left: "75%" }
+  },
+  {
+    country: "Turkey",
+    specialty: "Leather & Finishing",
+    description: "Key partner for high-grade leather processing chemicals and industrial auxiliaries.",
+    image: "https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=1400&auto=format&fit=crop",
+    coords: { top: "40%", left: "55%" }
+  },
+  {
+    country: "Global Markets",
+    specialty: "Strategic Sourcing",
+    description: "Continuous expansion across Europe and Asian markets for diversified supply.",
+    image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1400&auto=format&fit=crop",
+    coords: { top: "50%", left: "30%" }
+  },
+];
 
 export default function GlobalNetwork() {
-  const countries = [
-    {
-      country: "China",
-      description:
-        "Premium industrial materials, PU systems, and footwear raw materials sourced from trusted Chinese suppliers.",
-
-      image:
-        "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=1400&auto=format&fit=crop",
-    },
-
-    {
-      country: "Turkey",
-      description:
-        "High-quality leather materials, finishing products, and industrial solutions imported from Turkey.",
-
-      image:
-        "https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=1400&auto=format&fit=crop",
-    },
-
-    {
-      country: "Global Markets",
-      description:
-        "Expanding sourcing partnerships with international manufacturers and industrial suppliers worldwide.",
-
-      image:
-        "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1400&auto=format&fit=crop",
-    },
-  ];
-
   return (
-    <section className="section-spacing bg-white overflow-hidden relative">
+    <section className="relative py-24 bg-white overflow-hidden">
+      {/* Background Decor - Global Grid Effect */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L30 60M0 30L60 30' fill='none' stroke='%23000' stroke-width='1'/%3E%3C/svg%3E")` }}>
+      </div>
 
-      {/* BACKGROUND SHAPES */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-100 rounded-full blur-3xl opacity-40"></div>
-
-      <div className="container-width relative z-10">
-
-        {/* TOP CONTENT */}
-        <motion.div
-          initial={{ opacity: 0, y: 70 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="text-center max-w-4xl mx-auto"
-        >
-
-          {/* TAG */}
-          <div className="inline-flex items-center gap-2 bg-cyan-100 border border-cyan-200 text-cyan-700 px-5 py-2 rounded-full text-sm font-semibold mb-8">
-
-            <span className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></span>
-
-            International Import Network
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* HEADER SECTION */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+          <div className="max-w-2xl">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="flex items-center gap-3 mb-6"
+            >
+              <div className="p-2 bg-emerald-100 rounded-lg">
+                <Globe2 className="w-5 h-5 text-emerald-600" />
+              </div>
+              <span className="text-emerald-700 font-bold tracking-widest text-xs uppercase">Global Sourcing Hub</span>
+            </motion.div>
+            
+            <h2 className="text-5xl md:text-7xl font-black text-slate-900 leading-tight">
+              Bridging <span className="text-emerald-600 italic font-serif font-medium">World Markets</span> <br /> 
+              to Indian Industries
+            </h2>
           </div>
+          
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="max-w-sm text-slate-500 font-medium leading-relaxed border-l-2 border-emerald-500 pl-6"
+          >
+            Tansol Exims leverages a robust international network to ensure consistent supply of premium industrial materials.
+          </motion.p>
+        </div>
 
-          {/* HEADING */}
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
-
-            Global Sourcing &
-            International
-
-            <span className="gradient-text">
-              {" "}Supply Network
-            </span>
-          </h2>
-
-          {/* DESCRIPTION */}
-          <p className="mt-8 text-lg text-slate-600 leading-relaxed">
-            FH Chemicals maintains long-term sourcing relationships with trusted
-            international suppliers to deliver premium industrial materials,
-            leather chemicals, footwear raw materials, and specialized products
-            for the Indian market.
-          </p>
-        </motion.div>
-
-        {/* MAP SECTION */}
+        {/* INTERACTIVE MAP VISUAL */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative mt-20 bg-slate-50 border border-slate-200 rounded-[40px] overflow-hidden p-10 lg:p-20 shadow-xl"
+          className="relative rounded-[3rem] overflow-hidden bg-slate-900 h-[400px] md:h-[600px] mb-12 group shadow-2xl"
         >
-
-          {/* WORLD MAP IMAGE */}
-          <div className="relative">
-
-            {/* Replace later if you want your own global map */}
-            <Image
-              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1600&auto=format&fit=crop"
-              alt="Global Network"
-              width={1600}
-              height={900}
-              className="w-full rounded-[30px] object-cover max-h-[550px]"
-            />
-
-            {/* OVERLAY */}
-            <div className="absolute inset-0 bg-slate-900/40 rounded-[30px]"></div>
-
-            {/* FLOATING CARD 1 */}
+          <Image
+            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1600&auto=format&fit=crop"
+            alt="World Map"
+            fill
+            className="object-cover opacity-50 grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+          />
+          
+          {/* Pulsing Pins on Map */}
+          {countries.map((c, i) => (
             <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-              }}
-              className="absolute top-10 left-10 bg-white shadow-2xl rounded-3xl p-6 hidden md:block"
+              key={i}
+              style={{ top: c.coords.top, left: c.coords.left }}
+              className="absolute z-20 hidden md:flex items-center gap-3"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
             >
-
-              <h3 className="text-3xl font-black text-cyan-600">
-                China
-              </h3>
-
-              <p className="text-slate-500 mt-2">
-                PU Systems & Raw Materials
-              </p>
+              <div className="relative">
+                <div className="absolute inset-0 bg-emerald-400 rounded-full animate-ping opacity-75"></div>
+                <div className="relative bg-emerald-500 p-2 rounded-full border-2 border-white shadow-lg">
+                   <MapPin className="w-4 h-4 text-white" />
+                </div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-xl">
+                <span className="text-white font-bold text-sm">{c.country}</span>
+              </div>
             </motion.div>
+          ))}
 
-            {/* FLOATING CARD 2 */}
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-              }}
-              className="absolute bottom-10 right-10 bg-white shadow-2xl rounded-3xl p-6 hidden md:block"
-            >
-
-              <h3 className="text-3xl font-black text-cyan-600">
-                Turkey
-              </h3>
-
-              <p className="text-slate-500 mt-2">
-                Leather & Industrial Products
-              </p>
-            </motion.div>
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
         </motion.div>
 
-        {/* COUNTRY CARDS */}
-        <div className="grid lg:grid-cols-3 gap-8 mt-20">
-
+        {/* COUNTRY DETAIL CARDS */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {countries.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 70 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-              }}
-              viewport={{ once: true }}
-              className="group bg-slate-50 border border-slate-200 rounded-[35px] overflow-hidden hover:shadow-2xl hover:-translate-y-3 hover-transition"
+              transition={{ delay: index * 0.1 }}
+              className="group bg-slate-50 border border-slate-100 rounded-[2.5rem] p-4 transition-all duration-500 hover:bg-white hover:shadow-2xl hover:shadow-emerald-500/10"
             >
-
-              {/* IMAGE */}
-              <div className="relative overflow-hidden">
-
+              <div className="relative h-64 w-full rounded-[2rem] overflow-hidden mb-8">
                 <Image
                   src={item.image}
                   alt={item.country}
-                  width={700}
-                  height={500}
-                  className="w-full h-[260px] object-cover transition duration-700 group-hover:scale-110"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-
-                {/* OVERLAY */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
-
-                {/* BADGE */}
-                <div className="absolute top-5 left-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-sm font-semibold text-slate-800 shadow-md">
-
-                  Global Network
+                <div className="absolute top-4 left-4">
+                  <span className="bg-white/90 backdrop-blur-md text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest text-emerald-700">
+                    Sourcing Node
+                  </span>
                 </div>
               </div>
 
-              {/* CONTENT */}
-              <div className="p-8">
-
-                <h3 className="text-3xl font-black text-slate-900">
-                  {item.country}
-                </h3>
-
-                <p className="text-slate-600 leading-relaxed mt-5">
+              <div className="px-4 pb-4">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-3xl font-black text-slate-900 leading-none">{item.country}</h3>
+                    <p className="text-emerald-600 font-bold text-xs uppercase mt-2 tracking-wide">{item.specialty}</p>
+                  </div>
+                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-slate-100 text-slate-400 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+                    <ArrowUpRight className="w-5 h-5" />
+                  </div>
+                </div>
+                <p className="text-slate-500 text-sm leading-relaxed font-medium line-clamp-2">
                   {item.description}
                 </p>
-
-                <button className="mt-8 flex items-center gap-2 text-cyan-600 font-semibold group-hover:gap-4 hover-transition">
-
-                  Learn More
-
-                  <span>
-                    →
-                  </span>
-                </button>
               </div>
             </motion.div>
           ))}
