@@ -1,7 +1,6 @@
 import AboutSection from "./components/AboutSection";
 import CoreBusiness from "./components/CoreBusiness";
 import GlobalNetwork from "./components/GlobalNetwork";
-import IndustriesSection from "./components/IndustriesSection";
 import Navbar from "./components/Navbar";
 import TeamSection from "./components/TeamSection";
 import WhyChooseUs from "./components/WhyChooseUs";
@@ -39,7 +38,7 @@ export default function HomePage() {
       <WhyChooseUs/>
       <GlobalNetwork/>
       <TeamSection/>
-      <IndustriesSection/>
+      
    
       <ClientShowcase/>
       <ParallaxCTA/> 
