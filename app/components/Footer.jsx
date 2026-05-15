@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Mail, Phone, MapPin, Building, ShieldCheck, Users, Globe2, Briefcase } from "lucide-react";
 
 export default function TansolFooter() {
@@ -16,14 +17,22 @@ export default function TansolFooter() {
         {/* UPPER DYNAMIC META BLOCK */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/5">
           
-          {/* COL 1: FIRM OVERVIEW (5 Columns) */}
+          {/* COL 1: FIRM OVERVIEW & LOGO (5 Columns) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="space-y-3">
+            <div className="space-y-4">
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-500 block">Global Sourcing Network</span>
-              <h3 className="text-3xl font-black tracking-tighter">
-                TANSOL <span className="text-emerald-500 font-serif italic font-light">EXIM</span>
-              </h3>
+              
+              {/* INTEGRATED BRAND LOGO ASSET */}
+              <div className="relative w-56 h-16 transition-transform active:scale-98">
+                <Image
+                  src="/logo-new.png"
+                  alt="Tansol Exim"
+                  fill
+                  className="object-contain object-left brightness-0 invert"
+                />
+              </div>
             </div>
+            
             <p className="text-slate-400 text-sm font-medium leading-relaxed max-w-md">
               Established in 2012, TANSOL EXIM is a reputed importer and trader of Polyurethane (PU) Systems for slippers & shoes, shoe components, leather, and leather chemicals. With a strong presence across the Indian footwear market, we supply premium materials globally sourced from China, Turkey, and other trade hubs.
             </p>
