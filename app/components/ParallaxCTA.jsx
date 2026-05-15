@@ -20,16 +20,17 @@ export default function ParallaxCTA() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="relative bg-slate-950 border border-slate-900 rounded-[3.5rem] p-8 md:p-20 shadow-2xl overflow-hidden">
           
-          {/* 3. OPTIMIZED CTA.WEBP BACKGROUND ASSET LAYER */}
-          <div className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-luminosity">
+          {/* 3. REBALANCED CTA.WEBP BACKGROUND ASSET LAYER (Clearly Visible) */}
+          <div className="absolute inset-0 z-0 opacity-40 md:opacity-30 pointer-events-none transition-opacity duration-500">
             <img 
               src="/cta.webp" 
               alt="Industrial Background" 
-              className="w-full h-full object-cover object-center scale-105"
+              className="w-full h-full object-cover object-center scale-100"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-transparent z-0" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,transparent_30%,#020617_90%)] z-0" />
+          {/* Light Overlay to keep image colorful but protect text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-slate-950/40 z-0" />
+          <div className="absolute inset-0 bg-black/30 z-0" />
 
           <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
             
@@ -61,7 +62,7 @@ export default function ParallaxCTA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-slate-400 text-lg leading-relaxed max-w-lg mb-10 font-medium"
+                className="text-slate-300 text-lg leading-relaxed max-w-lg mb-10 font-medium"
               >
                 Connect with our technical experts to explore premium industrial chemicals, footwear materials, and global sourcing solutions tailored for your business.
               </motion.p>
@@ -94,20 +95,16 @@ export default function ParallaxCTA() {
                 <p className="text-emerald-400 text-[10px] font-black uppercase tracking-widest">Import Network</p>
               </ParallaxCard>
 
+              {/* Box without extra inner get-quote elements */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="sm:col-span-2 bg-gradient-to-r from-emerald-600 to-emerald-700 p-10 rounded-[2.5rem] text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-xl shadow-emerald-950/20 group"
+                className="sm:col-span-2 bg-gradient-to-r from-emerald-600 to-emerald-700 p-10 rounded-[2.5rem] text-white flex flex-col justify-center gap-2 shadow-xl shadow-emerald-950/20"
               >
-                <div>
-                  <p className="text-2xl font-bold mb-1 tracking-tight">Need technical help?</p>
-                  <p className="text-emerald-100 text-sm font-medium">Our specialists are one call away.</p>
-                </div>
-                <button className="bg-white text-emerald-900 px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-emerald-50 hover:scale-105 active:scale-95 transition-all">
-                  Contact Team
-                </button>
+                <p className="text-2xl font-bold tracking-tight">Need technical help?</p>
+                <p className="text-emerald-100 text-sm font-medium">Our specialists are one call away.</p>
               </motion.div>
             </div>
 
@@ -151,7 +148,7 @@ function ParallaxCard({ children }) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-slate-900/40 backdrop-blur-md p-8 rounded-[2rem] border border-slate-800 shadow-xl hover:border-emerald-500/50 transition-colors duration-300 cursor-pointer select-none"
+      className="bg-slate-900/60 backdrop-blur-md p-8 rounded-[2rem] border border-slate-800 shadow-xl hover:border-emerald-500/50 transition-colors duration-300 cursor-pointer select-none"
     >
       <div style={{ transform: "translateZ(20px)" }} className="transition-transform duration-300">
         {children}
