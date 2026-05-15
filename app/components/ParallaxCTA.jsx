@@ -68,16 +68,14 @@ export default function ParallaxCTA() {
                 <button className="bg-slate-900 hover:bg-emerald-700 text-white px-10 py-5 rounded-2xl font-bold transition-all active:scale-95 shadow-xl shadow-slate-200">
                   Contact Our Team
                 </button>
-                <button className="bg-white border border-slate-200 text-slate-700 px-10 py-5 rounded-2xl font-bold hover:bg-slate-50 transition-all shadow-sm active:scale-95">
-                  View Catalog
-                </button>
+              
               </motion.div>
             </div>
 
             {/* RIGHT SIDE: INTERACTIVE 3D/PARALLAX STATS BOXES */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <ParallaxCard>
-                <p className="text-4xl font-black text-slate-900 mb-1 tracking-tighter">18+</p>
+                <p className="text-4xl font-black text-slate-900 mb-1 tracking-tighter">14+</p>
                 <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">Years of Trust</p>
               </ParallaxCard>
 
