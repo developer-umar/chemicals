@@ -18,12 +18,20 @@ export default function ParallaxCTA() {
       <div className="absolute -bottom-24 -right-24 w-[500px] h-[500px] bg-emerald-50 rounded-full blur-[120px] opacity-70 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="bg-slate-50 border border-slate-200/60 rounded-[3.5rem] p-8 md:p-20 shadow-sm overflow-hidden relative">
+        <div className="relative bg-slate-950 border border-slate-900 rounded-[3.5rem] p-8 md:p-20 shadow-2xl overflow-hidden">
           
-          {/* DECORATIVE ELEMENT */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+          {/* 3. OPTIMIZED CTA.WEBP BACKGROUND ASSET LAYER */}
+          <div className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-luminosity">
+            <img 
+              src="/cta.webp" 
+              alt="Industrial Background" 
+              className="w-full h-full object-cover object-center scale-105"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-transparent z-0" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,transparent_30%,#020617_90%)] z-0" />
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
             
             {/* LEFT SIDE: THE PITCH */}
             <div className="relative z-10">
@@ -31,9 +39,9 @@ export default function ParallaxCTA() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center gap-2 bg-emerald-100/50 border border-emerald-200 text-emerald-700 px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8"
+                className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8"
               >
-                <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full animate-pulse" />
+                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
                 Partner with Tansol Exims
               </motion.div>
 
@@ -42,10 +50,10 @@ export default function ParallaxCTA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-5xl md:text-7xl font-black text-slate-900 leading-[1.1] tracking-tighter mb-8"
+                className="text-5xl md:text-7xl font-black text-white leading-[1.1] tracking-tighter mb-8"
               >
                 Elevate Your <br />
-                <span className="text-emerald-600 italic font-serif font-light underline decoration-emerald-200 underline-offset-8">Production Quality</span>
+                <span className="text-emerald-400 italic font-serif font-light underline decoration-emerald-500/30 underline-offset-8">Production Quality</span>
               </motion.h2>
 
               <motion.p 
@@ -53,7 +61,7 @@ export default function ParallaxCTA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-slate-600 text-lg leading-relaxed max-w-lg mb-10 font-medium"
+                className="text-slate-400 text-lg leading-relaxed max-w-lg mb-10 font-medium"
               >
                 Connect with our technical experts to explore premium industrial chemicals, footwear materials, and global sourcing solutions tailored for your business.
               </motion.p>
@@ -65,23 +73,25 @@ export default function ParallaxCTA() {
                 transition={{ delay: 0.3 }}
                 className="flex flex-wrap gap-4"
               >
-                <button className="bg-slate-900 hover:bg-emerald-700 text-white px-10 py-5 rounded-2xl font-bold transition-all active:scale-95 shadow-xl shadow-slate-200">
+                <button className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest transition-all active:scale-95 shadow-xl shadow-emerald-950/50">
                   Contact Our Team
                 </button>
-              
+                <button className="bg-slate-900 border border-slate-800 text-slate-200 px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-slate-800 transition-all shadow-sm active:scale-95">
+                  View Catalog
+                </button>
               </motion.div>
             </div>
 
             {/* RIGHT SIDE: INTERACTIVE 3D/PARALLAX STATS BOXES */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <ParallaxCard>
-                <p className="text-4xl font-black text-slate-900 mb-1 tracking-tighter">14+</p>
-                <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">Years of Trust</p>
+                <p className="text-4xl font-black text-white mb-1 tracking-tighter">18+</p>
+                <p className="text-emerald-400 text-[10px] font-black uppercase tracking-widest">Years of Trust</p>
               </ParallaxCard>
 
               <ParallaxCard>
-                <p className="text-4xl font-black text-slate-900 mb-1 tracking-tighter">Global</p>
-                <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">Import Network</p>
+                <p className="text-4xl font-black text-white mb-1 tracking-tighter">Global</p>
+                <p className="text-emerald-400 text-[10px] font-black uppercase tracking-widest">Import Network</p>
               </ParallaxCard>
 
               <motion.div 
@@ -89,14 +99,14 @@ export default function ParallaxCTA() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="sm:col-span-2 bg-emerald-600 p-10 rounded-[2.5rem] text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-xl shadow-emerald-200/50 group"
+                className="sm:col-span-2 bg-gradient-to-r from-emerald-600 to-emerald-700 p-10 rounded-[2.5rem] text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-xl shadow-emerald-950/20 group"
               >
                 <div>
                   <p className="text-2xl font-bold mb-1 tracking-tight">Need technical help?</p>
                   <p className="text-emerald-100 text-sm font-medium">Our specialists are one call away.</p>
                 </div>
-                <button className="bg-white text-emerald-700 px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-emerald-50 hover:scale-105 active:scale-95 transition-all">
-                  Get a Callback
+                <button className="bg-white text-emerald-900 px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-emerald-50 hover:scale-105 active:scale-95 transition-all">
+                  Contact Team
                 </button>
               </motion.div>
             </div>
@@ -108,7 +118,6 @@ export default function ParallaxCTA() {
   );
 }
 
-// Reusable Inner Component for Micro-Interaction Parallax
 function ParallaxCard({ children }) {
   const cardRef = useRef(null);
   const x = useMotionValue(0);
@@ -142,7 +151,7 @@ function ParallaxCard({ children }) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:border-emerald-300 transition-colors duration-300 cursor-pointer select-none"
+      className="bg-slate-900/40 backdrop-blur-md p-8 rounded-[2rem] border border-slate-800 shadow-xl hover:border-emerald-500/50 transition-colors duration-300 cursor-pointer select-none"
     >
       <div style={{ transform: "translateZ(20px)" }} className="transition-transform duration-300">
         {children}
