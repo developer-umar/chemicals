@@ -25,7 +25,7 @@ export default function TansolFooter() {
               {/* INTEGRATED BRAND LOGO ASSET */}
               <div className="relative w-56 h-16 transition-transform active:scale-98">
                 <Image
-                  src="/logo-new.png"
+                  src="/new-logo.png"
                   alt="Tansol Exim"
                   fill
                   className="object-contain object-left brightness-0 invert"
