@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-// 1. Industry Standard Import
 import Link from "next/link"; 
 
 export default function Navbar() {
@@ -23,24 +22,24 @@ export default function Navbar() {
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         scrolled 
-          ? "py-4 bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-sm" 
-          : "py-6 bg-transparent"
+          ? "py-3 bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-sm" 
+          : "py-5 bg-transparent"
       }`}
     >
       <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 md:px-10">
         
-        {/* LOGO */}
-        <div className="relative h-9 w-32 md:h-11 md:w-36 transition-transform active:scale-95">
+        {/* OPTIMIZED LARGE RESPONSIVE LOGO CONTAINER */}
+        <Link href="#home" className="relative block w-36 h-10 sm:w-44 sm:h-12 md:w-48 md:h-14 transition-transform active:scale-98">
           <Image
             src="/logo-new.png"
             alt="Tansol Exim"
             fill
             priority
-            className="object-contain"
+            className="object-contain object-left"
           />
-        </div>
+        </Link>
 
-        {/* DESKTOP MENU - Refactored with Link */}
+        {/* DESKTOP MENU */}
         <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((link, index) => (
             <Link
@@ -69,6 +68,7 @@ export default function Navbar() {
             scrolled ? "text-slate-800 hover:bg-slate-100" : "text-slate-900 hover:bg-white/20"
           }`}
           onClick={() => setIsOpen(true)}
+          aria-label="Open Menu"
         >
           <Menu size={24} />
         </button>
@@ -91,12 +91,13 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 240 }}
-              className="fixed top-0 right-0 h-full w-[300px] bg-white z-[70] p-8 border-l border-slate-100 shadow-2xl flex flex-col justify-between"
+              className="fixed top-0 right-0 h-full w-[310px] bg-white z-[70] p-8 border-l border-slate-100 shadow-2xl flex flex-col justify-between"
             >
               <div>
-                <div className="flex justify-between items-center pb-8 border-b border-slate-100">
-                  <div className="relative h-8 w-24">
-                    <Image src="/logo-new.png" alt="Tansol Exim" fill className="object-contain" />
+                {/* Mobile Drawer Top Header - Logo Resized Here Too */}
+                <div className="flex justify-between items-center pb-6 border-b border-slate-100">
+                  <div className="relative w-36 h-10">
+                    <Image src="/logo-new.png" alt="Tansol Exim" fill className="object-contain object-left" />
                   </div>
                   <button 
                     className="p-2 rounded-xl text-slate-400 hover:text-slate-900 hover:bg-slate-50 transition-colors"
@@ -106,7 +107,7 @@ export default function Navbar() {
                   </button>
                 </div>
                 
-                {/* Mobile Links - Refactored with Link */}
+                {/* Mobile Links */}
                 <div className="flex flex-col gap-6 mt-12">
                   {navLinks.map((link, index) => (
                     <Link
@@ -121,6 +122,7 @@ export default function Navbar() {
                 </div>
               </div>
 
+              {/* Mobile CTA */}
               <div className="pt-6 border-t border-slate-100">
                 <Link 
                   href="#contact"
