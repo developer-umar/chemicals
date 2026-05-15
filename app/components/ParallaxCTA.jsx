@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import Image from "next/image";
 
 export default function ParallaxCTA() {
   return (
@@ -20,17 +21,20 @@ export default function ParallaxCTA() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="relative bg-slate-950 border border-slate-900 rounded-[3.5rem] p-8 md:p-20 shadow-2xl overflow-hidden">
           
-          {/* 3. REBALANCED CTA.WEBP BACKGROUND ASSET LAYER (Clearly Visible) */}
-          <div className="absolute inset-0 z-0 opacity-40 md:opacity-30 pointer-events-none transition-opacity duration-500">
-            <img 
+          {/* 3. OPTIMIZED NEXT.JS IMAGE LAYER */}
+          <div className="absolute inset-0 z-0 opacity-45 pointer-events-none transition-opacity duration-500">
+            <Image 
               src="/cta.webp" 
               alt="Industrial Background" 
-              className="w-full h-full object-cover object-center scale-100"
+              fill
+              priority
+              sizes="(max-w-7xl) 100vw"
+              className="object-cover object-center scale-100"
             />
           </div>
-          {/* Light Overlay to keep image colorful but protect text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-slate-950/40 z-0" />
-          <div className="absolute inset-0 bg-black/30 z-0" />
+          {/* Balanced Transparent Gradient Layer */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/60 to-slate-950/30 z-0" />
+          <div className="absolute inset-0 bg-black/20 z-0" />
 
           <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
             
@@ -86,7 +90,7 @@ export default function ParallaxCTA() {
             {/* RIGHT SIDE: INTERACTIVE 3D/PARALLAX STATS BOXES */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <ParallaxCard>
-                <p className="text-4xl font-black text-white mb-1 tracking-tighter">18+</p>
+                <p className="text-4xl font-black text-white mb-1 tracking-tighter">14+</p>
                 <p className="text-emerald-400 text-[10px] font-black uppercase tracking-widest">Years of Trust</p>
               </ParallaxCard>
 
@@ -95,13 +99,13 @@ export default function ParallaxCTA() {
                 <p className="text-emerald-400 text-[10px] font-black uppercase tracking-widest">Import Network</p>
               </ParallaxCard>
 
-              {/* Box without extra inner get-quote elements */}
+              {/* Clean layout block without buttons */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="sm:col-span-2 bg-gradient-to-r from-emerald-600 to-emerald-700 p-10 rounded-[2.5rem] text-white flex flex-col justify-center gap-2 shadow-xl shadow-emerald-950/20"
+                className="sm:col-span-2 bg-gradient-to-r from-emerald-600/90 to-emerald-700/90 backdrop-blur-md p-10 rounded-[2.5rem] text-white flex flex-col justify-center min-h-[140px] shadow-xl shadow-emerald-950/20"
               >
                 <p className="text-2xl font-bold tracking-tight">Need technical help?</p>
                 <p className="text-emerald-100 text-sm font-medium">Our specialists are one call away.</p>
