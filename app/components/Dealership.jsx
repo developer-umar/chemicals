@@ -65,7 +65,7 @@ export default function XuchuanPartnership() {
                     <img 
                       src="/xuchuanLogo.webp" 
                       alt="Xuchuan Chemical Logo" 
-                      className="max-h-full object-contain brightness-0 invert" 
+                      className="max-h-full object-contain brightness-0 " 
                     />
                   </div>
                   <p className="text-emerald-500 font-black text-[10px] uppercase tracking-[0.3em]">Global PU Leader</p>
