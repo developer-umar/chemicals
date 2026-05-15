@@ -81,7 +81,7 @@ export default function TansolFooter() {
           {/* Proprietor Block */}
           <div className="bg-white/[0.01] border border-white/[0.03] p-6 rounded-2xl">
             <h5 className="font-bold text-white mb-2 flex items-center gap-2">
-              <ShieldCheck size={16} className="text-emerald-500" /> 18+ Years Leadership
+              <ShieldCheck size={16} className="text-emerald-500" /> 14+ Years Leadership
             </h5>
             <p className="text-slate-400 text-xs leading-relaxed font-medium">
               Guided by Mr. Nadeem Ajmal, utilizing extensive field expertise in technical procurement, sourcing dynamics, and structural market scaling.
