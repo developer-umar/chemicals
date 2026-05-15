@@ -34,7 +34,7 @@ export default function Navbar() {
           className="relative block w-52 h-16 sm:w-60 sm:h-20 md:w-72 md:h-24 transition-transform active:scale-98"
         >
           <Image
-            src="/logo-new.png"
+            src="/new-logo.png"
             alt="Tansol Exim"
             fill
             priority
