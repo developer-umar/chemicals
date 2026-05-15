@@ -4,13 +4,15 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+// 1. Industry Standard Import
+import Link from "next/link"; 
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false); // Mobile menu state
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -20,51 +22,59 @@ export default function Navbar() {
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? "py-4 bg-black/60 backdrop-blur-2xl border-b border-white/5" : "py-6 bg-transparent"
+        scrolled 
+          ? "py-4 bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-sm" 
+          : "py-6 bg-transparent"
       }`}
     >
       <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 md:px-10">
         
         {/* LOGO */}
-        <div className="relative h-8 w-28 md:h-10 md:w-32">
+        <div className="relative h-9 w-32 md:h-11 md:w-36 transition-transform active:scale-95">
           <Image
-            src="/logo.png"
-            alt="FH Chemicals"
+            src="/logo-new.png"
+            alt="Tansol Exim"
             fill
-            className="object-contain brightness-0 invert"
+            priority
+            className="object-contain"
           />
         </div>
 
-        {/* DESKTOP MENU */}
-        <nav className="hidden lg:flex items-center gap-12">
+        {/* DESKTOP MENU - Refactored with Link */}
+        <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((link, index) => (
-            <a
+            <Link
               key={index}
               href={`#${link.toLowerCase()}`}
-              className="text-[11px] uppercase tracking-[0.25em] text-white/60 hover:text-white transition-colors"
+              className="text-xs font-bold uppercase tracking-[0.2em] text-slate-600 hover:text-emerald-600 transition-colors duration-300"
             >
               {link}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        {/* CTA (Desktop Only) */}
+        {/* CTA */}
         <div className="hidden lg:block">
-          <button className="px-7 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] uppercase tracking-widest transition-all rounded-sm font-medium">
+          <Link 
+            href="#contact"
+            className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-xl shadow-md shadow-emerald-600/10 active:scale-95 inline-block"
+          >
             Request Quote
-          </button>
+          </Link>
         </div>
 
         {/* MOBILE TOGGLE */}
         <button 
-          className="lg:hidden text-white p-2"
+          className={`lg:hidden p-2 rounded-xl transition-colors ${
+            scrolled ? "text-slate-800 hover:bg-slate-100" : "text-slate-900 hover:bg-white/20"
+          }`}
           onClick={() => setIsOpen(true)}
         >
           <Menu size={24} />
         </button>
       </div>
 
-      {/* MOBILE OVERLAY MENU */}
+      {/* MOBILE DRAWER */}
       <AnimatePresence>
         {isOpen && (
           <>
@@ -73,36 +83,52 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[60]"
+              className="fixed inset-0 bg-slate-900/40 backdrop-blur-md z-[60]"
             />
+            
             <motion.div 
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-[280px] bg-[#0a0a0a] z-[70] p-10 border-l border-white/5"
+              transition={{ type: "spring", damping: 30, stiffness: 240 }}
+              className="fixed top-0 right-0 h-full w-[300px] bg-white z-[70] p-8 border-l border-slate-100 shadow-2xl flex flex-col justify-between"
             >
-              <button 
-                className="absolute top-6 right-6 text-white/50"
-                onClick={() => setIsOpen(false)}
-              >
-                <X size={28} />
-              </button>
-              
-              <div className="flex flex-col gap-8 mt-20">
-                {navLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={`#${link.toLowerCase()}`}
+              <div>
+                <div className="flex justify-between items-center pb-8 border-b border-slate-100">
+                  <div className="relative h-8 w-24">
+                    <Image src="/logo-new.png" alt="Tansol Exim" fill className="object-contain" />
+                  </div>
+                  <button 
+                    className="p-2 rounded-xl text-slate-400 hover:text-slate-900 hover:bg-slate-50 transition-colors"
                     onClick={() => setIsOpen(false)}
-                    className="text-lg uppercase tracking-widest text-white/80 hover:text-emerald-500 transition-colors"
                   >
-                    {link}
-                  </a>
-                ))}
-                <button className="mt-4 px-6 py-4 bg-emerald-600 text-white text-xs uppercase tracking-widest font-bold">
-                  Get Quote
-                </button>
+                    <X size={22} />
+                  </button>
+                </div>
+                
+                {/* Mobile Links - Refactored with Link */}
+                <div className="flex flex-col gap-6 mt-12">
+                  {navLinks.map((link, index) => (
+                    <Link
+                      key={index}
+                      href={`#${link.toLowerCase()}`}
+                      onClick={() => setIsOpen(false)}
+                      className="text-base font-bold uppercase tracking-widest text-slate-700 hover:text-emerald-600 transition-colors duration-300"
+                    >
+                      {link}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-6 border-t border-slate-100">
+                <Link 
+                  href="#contact"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full text-center block px-6 py-4 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all duration-300 shadow-md shadow-emerald-600/10"
+                >
+                  Get A Quote
+                </Link>
               </div>
             </motion.div>
           </>
