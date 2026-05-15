@@ -5,11 +5,11 @@ import Navbar from "./components/Navbar";
 import WhyChooseUs from "./components/WhyChooseUs";
 import ClientShowcase from "./components/ClientShowcase";
 import ParallaxCTA from "./components/ParallaxCTA";
-import Footer from "./components/Footer";
 import HeroSection from "./components/Hero";
 import TeamSection from "./components/TeamSection";
 import XuchuanPartnership from "./components/Dealership";
 import CorporateContact from "./components/Contact";
+import TansolFooter from "./components/Footer";
 export const metadata = {
   title:
     "FH Chemicals | PU Chemicals & Leather Tanning Chemicals Manufacturer",
@@ -50,7 +50,7 @@ export default function HomePage() {
       <ParallaxCTA/> 
       <CorporateContact/>
       
-      <Footer/>
+      <TansolFooter/>
       
     </main>
   );
