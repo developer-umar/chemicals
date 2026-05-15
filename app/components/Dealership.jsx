@@ -63,7 +63,7 @@ export default function XuchuanPartnership() {
                   <div className="h-24 flex items-center justify-center mb-4">
                     {/* Ensure xuchuanLogo.png is in your /public folder */}
                     <img 
-                      src="/public/xuchuanLogo.webp" 
+                      src="/xuchuanLogo.webp" 
                       alt="Xuchuan Chemical Logo" 
                       className="max-h-full object-contain brightness-0 invert" 
                     />
