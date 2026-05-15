@@ -81,9 +81,7 @@ export default function ParallaxCTA() {
                 <button className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest transition-all active:scale-95 shadow-xl shadow-emerald-950/50">
                   Contact Our Team
                 </button>
-                <button className="bg-slate-900 border border-slate-800 text-slate-200 px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-slate-800 transition-all shadow-sm active:scale-95">
-                  View Catalog
-                </button>
+                
               </motion.div>
             </div>
 
