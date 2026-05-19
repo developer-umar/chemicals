@@ -2,11 +2,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link"; // IMPORT THE LINK OBJECT
+import Link from "next/link";
 
 const businesses = [
   {
-    slug: "pu-systems", // Dynamic routing key
+    slug: "pu-systems", 
     title: "PU Systems",
     description: "Premium polyurethane systems for footwear and industrial applications.",
     image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop",
@@ -67,37 +67,39 @@ export default function TansolShowcase() {
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className={`group relative overflow-hidden rounded-[2.5rem] bg-white border border-slate-200 shadow-sm transition-all duration-500 hover:shadow-2xl cursor-pointer ${item.gridClass}`}
             >
-              {/* WE WRAP THE CLICKS DIRECTLY WITHOUT MODIFYING STYLES */}
-              <Link href={`/services/${item.slug}`} className="absolute inset-0 z-20" />
+              {/* FIXED: Wrapped the entire inner layout cleanly inside Next.js Link instead of a ghost empty tag */}
+              <Link href={`/${item.slug}`} className="absolute inset-0 z-20 block w-full h-full">
+                
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
 
-              <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-              <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <div className="flex justify-between items-end overflow-hidden">
-                  <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 className="text-2xl font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-white/70 text-sm line-clamp-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500">{item.description}</p>
-                  </div>
-                  <div className="p-2 bg-emerald-600 rounded-full text-white translate-y-12 group-hover:translate-y-0 transition-all duration-500">
-                    <ArrowUpRight className="w-5 h-5" />
+                <div className="absolute inset-0 p-8 flex flex-col justify-end z-10">
+                  <div className="flex justify-between items-end overflow-hidden">
+                    <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <h3 className="text-2xl font-bold text-white mb-2">{item.title}</h3>
+                      <p className="text-white/70 text-sm line-clamp-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500">{item.description}</p>
+                    </div>
+                    <div className="p-2 bg-emerald-600 rounded-full text-white translate-y-12 group-hover:translate-y-0 transition-all duration-500">
+                      <ArrowUpRight className="w-5 h-5" />
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {item.tag && (
-                <div className="absolute top-6 left-6 z-30">
-                  <span className="bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-black px-4 py-2 rounded-full uppercase">
-                    {item.tag}
-                  </span>
-                </div>
-              )}
+                {item.tag && (
+                  <div className="absolute top-6 left-6 z-30">
+                    <span className="bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-black px-4 py-2 rounded-full uppercase">
+                      {item.tag}
+                    </span>
+                  </div>
+                )}
+                
+              </Link>
             </motion.div>
           ))}
         </div>
