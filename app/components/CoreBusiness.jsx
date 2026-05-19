@@ -17,7 +17,7 @@ const businesses = [
     route: "/leather-chemicals", // Exact match with app/leather-chemicals/
     title: "Leather Chemicals",
     description: "High-quality leather processing chemicals and auxiliaries.",
-    image: "https://images.unsplash.com/photo-1616423641454-ec9935946192?q=80&w=1400&auto=format&fit=crop",
+    image: "/Chemicals.jpg",
     gridClass: "md:col-span-1 md:row-span-1",
   },
   {
@@ -31,7 +31,7 @@ const businesses = [
     route: "/leather-goods", // Exact match with app/leather-goods/
     title: "Leather Goods",
     description: "Export-grade leather belts, wallets, and custom accessories.",
-    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1400&auto=format&fit=crop",
+    image: "/leather.jpg",
     gridClass: "md:col-span-1 md:row-span-1",
   },
   {
