@@ -45,7 +45,7 @@ const businesses = [
 
 export default function TansolShowcase() {
   return (
-    <section className="relative bg-[#FAFAFA] py-24 px-6 md:px-10 overflow-hidden">
+    <section className="relative bg-[#FAFAFA] py-24 px-6 md:px-10 overflow-hidden" id="#product">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-16">
           <motion.div initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} className="flex items-center gap-3 mb-6">
