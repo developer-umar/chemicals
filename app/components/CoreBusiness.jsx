@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const businesses = [
   {
-    slug: "pu-systems", 
+    route: "/pu-systems", // Exact match with app/pu-systems/
     title: "PU Systems",
     description: "Premium polyurethane systems for footwear and industrial applications.",
     image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400&auto=format&fit=crop",
@@ -14,28 +14,28 @@ const businesses = [
     gridClass: "md:col-span-2 md:row-span-1", 
   },
   {
-    slug: "leather-chemicals",
+    route: "/leather-chemicals", // Exact match with app/leather-chemicals/
     title: "Leather Chemicals",
     description: "High-quality leather processing chemicals and auxiliaries.",
     image: "https://images.unsplash.com/photo-1616423641454-ec9935946192?q=80&w=1400&auto=format&fit=crop",
     gridClass: "md:col-span-1 md:row-span-1",
   },
   {
-    slug: "leather-trading",
+    route: "/leather-trading", // Exact match with app/leather-trading/
     title: "Leather Trading",
     description: "Global trading of raw, finished, and semi-finished leather materials.",
     image: "https://images.unsplash.com/photo-1590736961918-71e8c4014744?q=80&w=1400&auto=format&fit=crop",
     gridClass: "md:col-span-1 md:row-span-1",
   },
   {
-    slug: "leather-goods",
+    route: "/leather-goods", // Exact match with app/leather-goods/
     title: "Leather Goods",
     description: "Export-grade leather belts, wallets, and custom accessories.",
     image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1400&auto=format&fit=crop",
     gridClass: "md:col-span-1 md:row-span-1",
   },
   {
-    slug: "hairon-carpets",
+    route: "/hairon-carpets", // Exact match with app/hairon-carpets/
     title: "Hairon Carpets",
     description: "Luxury leather carpets designed for premium furnishing.",
     image: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=1400&auto=format&fit=crop",
@@ -67,8 +67,8 @@ export default function TansolShowcase() {
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className={`group relative overflow-hidden rounded-[2.5rem] bg-white border border-slate-200 shadow-sm transition-all duration-500 hover:shadow-2xl cursor-pointer ${item.gridClass}`}
             >
-              {/* FIXED: Wrapped the entire inner layout cleanly inside Next.js Link instead of a ghost empty tag */}
-              <Link href={`/${item.slug}`} className="absolute inset-0 z-20 block w-full h-full">
+              {/* FIXED: Now directly maps to item.route without parsing internal template literal strings */}
+              <Link href={item.route} className="absolute inset-0 z-20 block w-full h-full">
                 
                 <Image
                   src={item.image}
