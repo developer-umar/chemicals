@@ -24,14 +24,14 @@ const businesses = [
     route: "/leather-trading", // Exact match with app/leather-trading/
     title: "Leather Trading",
     description: "Global trading of raw, finished, and semi-finished leather materials.",
-    image: "https://images.unsplash.com/photo-1590736961918-71e8c4014744?q=80&w=1400&auto=format&fit=crop",
+    image: "/leather.jpg",
     gridClass: "md:col-span-1 md:row-span-1",
   },
   {
     route: "/leather-goods", // Exact match with app/leather-goods/
     title: "Leather Goods",
     description: "Export-grade leather belts, wallets, and custom accessories.",
-    image: "/leather.jpg",
+    image: "/leather-hero2.png",
     gridClass: "md:col-span-1 md:row-span-1",
   },
   {
